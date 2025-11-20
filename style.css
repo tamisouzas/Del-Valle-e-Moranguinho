@@ -1,753 +1,1282 @@
-*{
-  padding: 0;
-  margin: 0;
+/* ============================================================
+   RESET SIMPLES
+   ============================================================ */
+
+* {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-  background-color: whitesmoke;
-  color: rgb(0, 0, 0);
-  font-family: "Poppins", sans-serif;
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1f2933;             /* cinza bem escuro */
+  background-image: linear-gradient(
+    to bottom,
+    #d1b1bc 0%,    /* topo branco */
+    #fff7fb 18%,
+
+    #fff7fb 18%,  /* faixa central rosé */
+    #d1b1bc 55%,
+
+    #d1b1bc 55%,  /* parte de baixo levemente rosada, combinando com o site */
+    #fff7fb 100%
+  );
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ==============================
-   (PALETA + TIPOGRAFIA + UTILITÁRIOS)
-   ============================== */
-:root {
-  /* Paleta (clonada do site que você mandou) */
-  --cor-morango-1: #EC4899;
-  --cor-morango-2: #EF4444;
-
-  --cor-uva-1: #A855F7;
-  --cor-uva-2: #7C3AED;
-
-  --cor-framboesa-1: #DB2777;
-  --cor-framboesa-2: #C026D3;
-
-  --cor-laranja-1: #FB923C;
-  --cor-laranja-2: #EAB308;
-
-  --cor-limao-1: #FACC15;
-  --cor-limao-2: #84CC16;
-
-  /* Tipografia (do site que você mandou) */
-  --fonte-base: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --fonte-script: "Pacifico", cursive;
-
-  /* Raios, bordas e sombras suaves (clonado do site que você mandou) */
-  --raio-grande: 16px;
-  --borda-suave: 1px solid rgba(0,0,0,.08);
-  --sombra-cartao: 0 10px 20px rgba(0,0,0,.08);
-  --texto-suave: #666666;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-header{
-  width: 100%;
-  display: flex;
-  padding: 2% 4%;
-  justify-content: space-between;
-  align-items: center;
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  margin-bottom: 16px;
+  color: #4b5563; /* cinza médio para textos */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ============================================================
+   LAYOUT GERAL
+   ============================================================ */
+
+main {
+  max-width: 1440px;      /* antes 1200px */
+  margin: 0 auto;
+  padding: 80px 16px 64px; /* antes 24px */
+}
+
+section {
+  padding: 48px 0;
+}
+
+.tituloSecao {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #1f2933;
+}
+
+.descricao-secao {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+/* ============================================================
+   HEADER + NAV
+   ============================================================ */
+
+/* HEADER – barra fixa no topo, estilo “site de marca” */
+header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 99;
-  background-color: transparent; /* Barra rosa removida */
+  right: 0;
+
+  height: 80px;                  /* altura da barra */
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #ffffff;     /* barra branca */
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+
+  z-index: 100;                  /* fica acima do conteúdo */
 }
 
-  /* MENU */
-    ul{
+.logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logotipo {
+  width: 120px;
+  height: auto;
+}
+
+
+/* NAV – itens alinhados na mesma barra do header */
+header nav {
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+header nav ul {
   display: flex;
+  align-items: center;
   gap: 24px;
-  list-style-type: none;
-  background-color: rgba(245, 245, 245, 0.701);
-  padding: 16px 20px;
-  border-radius: 12px;
-  backdrop-filter: blu(20px);
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin: 0;
+  padding: 0;
 }
 
-header ul li .menu-link {
-  text-decoration: none;        /* sem sublinhado */
-  font-weight: bold;            /* negrito */
-  text-transform: uppercase;    /* caixa alta */
-  color: rgb(224, 116, 134);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  letter-spacing: 0.03em;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  padding: 8px 12px;
-  border-radius: 8px;
+.menu-link {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 0;
+  position: relative;
 }
 
-header ul li .menu-link:hover {
-  text-decoration: none;
-  color: #d4006d;               /* rosa moranguinho */
-  background-color: #ffe6f0;    /* leve destaque no hover */
+/* sublinhado no hover – pode manter se gostou */
+.menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #ec4899;
+  transition: width 150ms ease-out;
 }
 
-.logotipo{  
-  width: 200px;
+.menu-link:hover::after,
+.menu-link:focus-visible::after {
+  width: 100%;
 }
 
-/* SEÇÕES */
 
-section{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding-inline: 4%;
-        /* padding-block: clamp(5px, 50vw, 0px); */
-}
-
-.tituloSecao{
-  display: flex;
-  text-justify: center;
-  font-size: 40px;  
-}
-
-/* SEÇÃO 1 INICIO - SLIDESHOW DE IMAGENS*/
-
+/* SECTION 1 – carrossel encostado no header */
 .secaoinicio {
-    background-color: whitesmoke;
-    text-align: center;
-    text-decoration: none;
-    height: 85vh;
-    padding-inline: 0;
-}
-.contentinicio{
-    height: 80%;
-    width: 100%;
-    overflow: hidden;
-    position: absolute;
-    align-items: center;
-}
- 
-.navegarinicio{
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translate(-50%);
-    display: flex;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+
+  padding-top: 0;          /* colado no header */
+  padding-bottom: 48px;    /* só respiro embaixo */
 }
 
-.bar {
-    width: 70px;
-    height: 17px;
-    border: 2px solid #000;
-    margin: 6px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: .6s;
-}
+/* SLIDER INÍCIO – FULL WIDTH + ANIMAÇÃO 1000ms */
 
-.bar:hover {
-    background-color: #000;
-}
-
-input {
-    display: none;
+.secaoinicio .contentinicio {
+  width: 100%;
 }
 
 .slidesinicio {
-    display: flex;
-    width: 400%;
-    height: 100%;
-}
-
-.slidesinicio .slide {
-    width: 25%;
-    transform: .6s;
-}
-
-.slidesinicio .slide .slide img {
-    width: 100%;
-    height: 100%;
-}
-
-#slideinicio1:checked ~ .s1 {
-    margin-left: 0;
-}
-
-#slideinicio2:checked ~ .s1 {
-    margin-left: -25%;
-}
-
-#slideinicio3:checked ~ .s1 {
-    margin-left: -50%;
-}
-
-#slideinicio4:checked ~ .s1 {
-    margin-left: -75%;
-}
-
-/* SEÇÃO 1/2 - COLLAB */
-
-.secaocollab{
-  display: flex;
-  align-items: center;
-}
-
-.divInformacao{
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.informacoesmarca{
-  width: 50%;
-  padding: 32px 80px;
-}
-
-.informacoesmarca .titulo-marca{
-  font-size: 24px;
-  font-weight: 500;
-  margin: 40px 0px 4px;
-}
-
-.informacoesmarca img{
-  align-items: center;
-
-}
-
-
-/* SEÇÃO 2 - PRODUTOS */
-
-.secaoproduto{
-    align-items: center;
-    margin-top: 30px;
-}
-
-/* CARDS OS PRODUTOS */
-
-.divCards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 100px;
-    padding-top: 60px;
-}    
-
-.card:hover {
-    top: -10px;
-    scale: 1.05;
-    height: 400px;
-}
-
-.card:hover .conteudocard{
-    top:    120px;
-    height: 340px;
-}
-
-.card:hover img {
-  transform: translateY(-20px) scale(1.18);
-}
-
-.card:hover .conteudocard p {
-  max-height: 120px;
-}
-
-.divCards .card {
-  margin-top: 40px;
-  background-color: #fff;
-  width: 300px;
-  height: 450px;
   position: relative;
-  border-radius: 20px;
-  box-shadow: 0px 35px 80px rgba(0, 0, 0, 0.15);
-  transition: 0.5s;
-  overflow: visible;
-  display: grid;                     
-  grid-template-rows: 1fr auto;
-  justify-items: center;
-  align-items: end;
-  padding: 16px 20px;
-}
-
-
-.divCards .card img {
-  align-self: start;
-  width: 60%;
-  height: auto;
-  margin-top: 8px;
-  transition: transform 0.6s ease;
-  z-index: 2;
-}
-
-.divCards .conteudocard {
-  align-self: end;
   width: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.divCards .conteudocard p {
-  max-height: 0;
+  height: 80vh;
+  min-height: 360px;
+  max-height: 720px;
   overflow: hidden;
-  transition: max-height .4s ease;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
 }
 
-
-/* SEÇAO 3 - CRIAÇÃO */
-
-.secaocriacao{
-  margin-top: 0px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto 420px;
-  column-gap: 24px;
-  row-gap: 12px;
+/* radios escondidos */
+.slidesinicio input[type="radio"] {
+  display: none;
 }
 
-.secaocriacao > h2,
-.secaocriacao > p{
-  grid-column: 1 / -1;
-  margin: 0;    
-}
-
-.content1,
-.content2{
-  position: relative;
-  height: 420px;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #eee;
-  grid-row: 4;
-  border-radius: var(--raio-grande);
-  box-shadow: var(--sombra-cartao);
-  padding: 24px;
-}
-
-.navegar,
-.navegar2{
+/* slides */
+.slidesinicio .slide {
   position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  z-index: 2;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
 }
 
-.bar {
-    width: 70px;
-    height: 17px;
-    border: 2px solid #000;
-    margin: 6px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: .6s;
-}
-
-.bar:hover {
-    background-color: #000;
-}
-
-input {
-    display: none;
-    
-}
-
-.slides,
-.slides2{
-  display: flex;
-  width: 500%;
-  height: 100%;
-  
-
-}
-
-.slide,
-.slide2{
-  width: 20%;
-  transition: .6s;
-  
-
-}
-
-.slide img,
-.slide2 img{
+.slidesinicio .slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-#slide1:checked ~ .s1 {
-    margin-left: 0;
+
+/* qual slide aparece */
+#slideinicio1:checked ~ .s1 {
+  opacity: 1;
 }
 
-#slide2:checked ~ .s1 {
-    margin-left: -20%;
+#slideinicio2:checked ~ .slide:nth-of-type(2) {
+  opacity: 1;
 }
 
-#slide3:checked ~ .s1 {
-    margin-left: -40%;
+#slideinicio3:checked ~ .slide:nth-of-type(3) {
+  opacity: 1;
 }
 
-#slide4:checked ~ .s1 {
-    margin-left: -60%;
+#slideinicio4:checked ~ .slide:nth-of-type(4) {
+  opacity: 1;
 }
 
-#slide5:checked ~ .s1 {
-    margin-left: -80%;
+#slideinicio5:checked ~ .slide:nth-of-type(5) {
+  opacity: 1;
 }
 
-.bar {
-    width: 70px;
-    height: 17px;
-    border: 2px solid #000;
-    margin: 6px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: .6s;
-    
+#slideinicio6:checked ~ .slide:nth-of-type(6) {
+  opacity: 1;
 }
 
-.bar:hover {
-    background-color: #000;
+/* bolinhas de navegação */
+.navegarinicio {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
 }
 
-input {
-    display: none;
-    
+.navegarinicio .bar {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #ec4899;
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: background-color 150ms ease-out, transform 150ms ease-out;
 }
 
-#slideA:checked ~ .s1 {
-    margin-left: 0;
+/* pinta a bolinha correspondente ao slide ativo */
+#slideinicio1:checked ~ .navegarinicio label[for="slideinicio1"],
+#slideinicio2:checked ~ .navegarinicio label[for="slideinicio2"],
+#slideinicio3:checked ~ .navegarinicio label[for="slideinicio3"],
+#slideinicio4:checked ~ .navegarinicio label[for="slideinicio4"],
+#slideinicio5:checked ~ .navegarinicio label[for="slideinicio5"],
+#slideinicio6:checked ~ .navegarinicio label[for="slideinicio6"] {
+  background-color: #ec4899;
+  transform: scale(1.1);
 }
 
-#slideB:checked ~ .s1 {
-    margin-left: -20%;
-}
-
-#slideC:checked ~ .s1 {
-    margin-left: -40%;
-}
-
-/* ==============================
-   PAINEL DE ESTUDO (SEÇÃO 3)
-   ============================== */
-
-
-.painel-estudo {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  margin-block: 16px 28px;
-  grid-column: 1 / -1;
-  grid-row: 3;
-}
-
-@media (min-width: 768px) {
-  .painel-estudo {
-    grid-template-columns: 1fr 1fr; /* 2 colunas em telas médias+ */
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .slidesinicio {
+    height: 60vh;
+    min-height: 260px;
   }
 }
 
-.cartao-estudo {
-  background: #fff;
-  border: var(--borda-suave);
-  border-radius: var(--raio-grande);
-  box-shadow: var(--sombra-cartao);
-  padding: 24px;
+/* CONTROLES – SETAS LATERAIS DO SLIDER */
+
+.controles-setas {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  pointer-events: none; /* container não bloqueia clique */
+}
+/* CONTROLES – SETAS LATERAIS DO SLIDER */
+
+.controles-setas {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  pointer-events: none; /* container não bloqueia clique */
 }
 
-.cartao-estudo .icone {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 12px;
-  color: var(--cor-morango-2); /* detalhe de cor */
+.seta {
+  display: flex;
+  align-items: center;
+}
+
+/* cada label é um “botão” de seta */
+.seta-label {
+  display: none;                /* por padrão, todas escondidas */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;         /* esses sim podem ser clicados */
+  transition: background-color 150ms ease-out, transform 150ms ease-out;
+}
+
+.seta-label:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+}
+
+/* Mostrar apenas as setas correspondentes ao slide ativo */
+
+#slideinicio1:checked ~ .controles-setas .seta-esquerda .seta1,
+#slideinicio1:checked ~ .controles-setas .seta-direita .seta1 {
+  display: flex;
+}
+
+#slideinicio2:checked ~ .controles-setas .seta-esquerda .seta2,
+#slideinicio2:checked ~ .controles-setas .seta-direita .seta2 {
+  display: flex;
+}
+
+#slideinicio3:checked ~ .controles-setas .seta-esquerda .seta3,
+#slideinicio3:checked ~ .controles-setas .seta-direita .seta3 {
+  display: flex;
+}
+
+#slideinicio4:checked ~ .controles-setas .seta-esquerda .seta4,
+#slideinicio4:checked ~ .controles-setas .seta-direita .seta4 {
+  display: flex;
+}
+
+#slideinicio5:checked ~ .controles-setas .seta-esquerda .seta5,
+#slideinicio5:checked ~ .controles-setas .seta-direita .seta5 {
+  display: flex;
+}
+
+#slideinicio6:checked ~ .controles-setas .seta-esquerda .seta6,
+#slideinicio6:checked ~ .controles-setas .seta-direita .seta6 {
+  display: flex;
+}
+
+
+.seta {
+  display: flex;
+  align-items: center;
+}
+
+/* cada label é um “botão” de seta */
+.seta-label {
+  display: none;                /* por padrão, todas escondidas */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ec4899;
+  color: #ffffff;
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;         /* esses sim podem ser clicados */
+  transition: background-color 150ms ease-out, transform 150ms ease-out;
+}
+
+.seta-label:hover {
+  background-color: rgba(156, 4, 123, 0.7);
+  transform: scale(1.05);
+}
+
+/* Mostrar apenas as setas correspondentes ao slide ativo */
+
+#slideinicio1:checked ~ .controles-setas .seta-esquerda .seta1,
+#slideinicio1:checked ~ .controles-setas .seta-direita .seta1 {
+  display: flex;
+}
+
+#slideinicio2:checked ~ .controles-setas .seta-esquerda .seta2,
+#slideinicio2:checked ~ .controles-setas .seta-direita .seta2 {
+  display: flex;
+}
+
+#slideinicio3:checked ~ .controles-setas .seta-esquerda .seta3,
+#slideinicio3:checked ~ .controles-setas .seta-direita .seta3 {
+  display: flex;
+}
+
+#slideinicio4:checked ~ .controles-setas .seta-esquerda .seta4,
+#slideinicio4:checked ~ .controles-setas .seta-direita .seta4 {
+  display: flex;
+}
+
+
+
+/* ============================================================
+   SEÇÃO COLLAB
+   ============================================================ */
+
+.secaocollab p {
+  text-align: center;
+}
+
+.divInformacao {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.informacoesmarca {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+
+.informacoesmarca img {
+  margin: 0 auto 25px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.informacoesmarca .titulo-marca {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+
+/* ============================================================
+   SEÇÃO PRODUTOS – GRID 3 EM CIMA, 2 CENTRALIZADOS EMBAIXO
+   + ANIMAÇÃO DE ENTRADA + HOVER
+   ============================================================ */
+
+.secaoproduto .divCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* deixa a segunda linha (2 cards) centralizada */
+  gap: 32px;
+}
+
+.secaoproduto .card {
+  position: relative;
+
+  /* LARGURA E GRID: 3 cards por linha no desktop */
+  flex: 0 0 30%;         /* não encolhe, ocupa ~30% cada => no máximo 3 por linha */
+  max-width: 340px;      /* trava pra não ficar gigante em telas muito largas */
+
+  height: 320px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: height 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* animação de entrada */
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: cardEntrada 0.6s ease-out forwards;
+}
+
+
+/* delays para entrar em cascata */
+.secaoproduto .card:nth-child(1) { animation-delay: 0.1s; }
+.secaoproduto .card:nth-child(2) { animation-delay: 0.2s; }
+.secaoproduto .card:nth-child(3) { animation-delay: 0.3s; }
+.secaoproduto .card:nth-child(4) { animation-delay: 0.4s; }
+.secaoproduto .card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes cardEntrada {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* borda de sabor (topo do card) */
+.secaoproduto .card-morango   { border-top: 6px solid #ec4899; } /* morango */
+.secaoproduto .card-laranja   { border-top: 6px solid #fb923c; } /* laranja */
+.secaoproduto .card-limao     { border-top: 6px solid #facc15; } /* limão */
+.secaoproduto .card-blueberry { border-top: 6px solid #7c3aed; } /* blueberry (usa roxo uva) */
+.secaoproduto .card-ameixa    { border-top: 6px solid #c026d3; } /* ameixa / framboesa */
+
+/* HOVER – card cresce e “sobe” um pouco */
+.secaoproduto .card:hover {
+  height: 420px;
+  transform: translateY(-6px);
+  box-shadow: 0 45px 90px rgba(0, 0, 0, 0.20);
+}
+
+/* IMAGEM DA LATA – tamanho fixo e centralizado */
+.secaoproduto .card-imagem {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;   /* largura fixa para todas as latas */
+  height: 250px;  /* altura fixa para todas as latas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: top 0.5s ease, transform 0.5s ease;
+}
+
+.secaoproduto .card-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* HOVER – lata sobe e diminui, “saindo” um pouco do card */
+.secaoproduto .card:hover .card-imagem {
+  top: -60px;
+  transform: translateX(-50%) scale(0.8);
+}
+
+/* CONTEÚDO – escondido até o hover */
+.secaoproduto .card-conteudo {
+  position: absolute;
+  top: 270px;
+  left: 0;
+  right: 0;
+  padding: 0 24px 24px;
+  text-align: center;
+  height: 0;
+  overflow: hidden;
+  transition: top 0.5s ease, height 0.5s ease;
+}
+
+.secaoproduto .card:hover .card-conteudo {
+  top: 170px;
+  height: 220px;
+}
+
+.secaoproduto .card-conteudo h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #1f2933;
+}
+
+.secaoproduto .card-conteudo p {
+  font-size: 19px;
+}
+
+/* RESPONSIVO – ajusta largura dos cards em telas menores */
+@media (max-width: 900px) {
+  .secaoproduto .card {
+    width: 280px;
+  }
+}
+
+@media (max-width: 600px) {
+  .secaoproduto .divCards {
+    gap: 24px;
+  }
+
+  .secaoproduto .card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+
+/* ============================================================
+   SEÇÃO CRIAÇÃO – TEXTO + PAINEL ESTUDO
+   ============================================================ */
+
+.secaocriacao > p {
+  max-width: 720px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.painel-estudo {
+  margin-top: 24px;
+  margin-bottom: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.cartao-estudo {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
 }
 
 .titulo-cartao {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 18px;
   margin-bottom: 16px;
 }
 
-/* ---- Paleta de Cores ---- */
+/* ============================
+   PALETA DE CORES – CARD
+   ============================ */
 
+/* Cores das amostras */
+.amostra-morango-1   { background-color: #EC4899; }
+.amostra-morango-2   { background-color: #EF4444; }
+
+.amostra-uva-1       { background-color: #A855F7; }
+.amostra-uva-2       { background-color: #7C3AED; }
+
+.amostra-framboesa-1 { background-color: #DB2777; }
+.amostra-framboesa-2 { background-color: #C026D3; }
+
+.amostra-laranja-1   { background-color: #FB923C; }
+.amostra-laranja-2   { background-color: #EAB308; }
+
+.amostra-limao-1     { background-color: #FACC15; }
+.amostra-limao-2     { background-color: #84CC16; }
+
+/* lista vertical de linhas de cor */
 .lista-cores {
-  display: grid;
-  gap: 16px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .linha-cor {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: 12px;
+  display: flex;
+  align-items: center;   /* ALINHA cor + texto pelo centro vertical */
+  gap: 16px;             /* espaço entre as cores e o texto */
 }
 
 .amostras {
   display: flex;
+  flex-direction: row;   /* lado a lado */
   gap: 8px;
+  align-items: center;   /* centraliza na vertical em relação ao texto */
 }
 
 .amostra {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,.12);
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(15, 23, 42, 0.18);
 }
 
 .descricao-cor {
-  font-size: 12px;
-  color: var(--texto-suave);
+  display: flex;
+  align-items: center;   /* centraliza o texto e os <code> na altura da cor */
+  margin: 0;             /* ZERA a margem padrão do <p> (matando o desnível) */
+  font-size: 14px;
+  color: #4b5563;
+  gap: 8px;              /* espaço entre “Morango —” e os códigos */
+  line-height: 1.3;      /* deixa o bloco mais compacto */
 }
 
-/* ---- Tipografia ---- */
 
+.descricao-cor code {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 13px;
+  background-color: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 6px;
+  line-height: 1;
+}
+
+/* tipografia */
 .lista-tipografia {
-  display: grid;
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .tipografia-item .rotulo {
-  font-weight: 600;
-  margin-bottom: 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin-bottom: 4px;
 }
 
 .logo-delvalle {
-  font-family: var(--fonte-script); /* cai na fonte script se adicionada */
-  font-size: 28px;
-  font-weight: 700;
+  font-family: "Pacifico", cursive;
+  font-size: 24px;
 }
 
 .titulo-sabor {
-  font-family: var(--fonte-base);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
-  letter-spacing: .5px;
 }
 
 .texto-informacao {
-  font-family: var(--fonte-base);
   font-size: 14px;
 }
 
-.texto-nota {
+/* CONTAINER DOS DOIS CARROSÉIS DA CRIAÇÃO */
+.carrosseis-criacao {
+  margin-top: 32px;
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.carrosseis-criacao .content1,
+.carrosseis-criacao .content2 {
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  .carrosseis-criacao {
+    flex-direction: column;
+  }
+}
+
+/* SLIDERS DE CRIAÇÃO – RÓTULOS E PACKS */
+.carrosseis-criacao .slides,
+.carrosseis-criacao .slides2 {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+}
+
+/* esconde os radios */
+.carrosseis-criacao input[type="radio"] {
+  display: none;
+}
+
+/* slides */
+.carrosseis-criacao .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
+}
+
+.carrosseis-criacao .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* RÓTULOS – qual slide aparece */
+#slide1:checked ~ .s1 {
+  opacity: 1;
+}
+
+#slide2:checked ~ .slide:nth-of-type(2) {
+  opacity: 1;
+}
+
+#slide3:checked ~ .slide:nth-of-type(3) {
+  opacity: 1;
+}
+
+#slide4:checked ~ .slide:nth-of-type(4) {
+  opacity: 1;
+}
+
+#slide5:checked ~ .slide:nth-of-type(5) {
+  opacity: 1;
+}
+
+/* PACKS – qual slide aparece */
+#slideA:checked ~ .s1 {
+  opacity: 1;
+}
+
+#slideB:checked ~ .slide:nth-of-type(2) {
+  opacity: 1;
+}
+
+#slideC:checked ~ .slide:nth-of-type(3) {
+  opacity: 1;
+}
+
+/* BOLINHAS – mesmo estilo do slider principal */
+.navegar,
+.navegar2 {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.navegar .bar,
+.navegar2 .bar {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #ec4899;
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: background-color 150ms ease-out, transform 150ms ease-out;
+}
+
+/* pinta bolinha do carrossel de RÓTULOS */
+#slide1:checked ~ .navegar-rotulos label[for="slide1"],
+#slide2:checked ~ .navegar-rotulos label[for="slide2"],
+#slide3:checked ~ .navegar-rotulos label[for="slide3"],
+#slide4:checked ~ .navegar-rotulos label[for="slide4"],
+#slide5:checked ~ .navegar-rotulos label[for="slide5"] {
+  background-color: #ec4899;
+  transform: scale(1.1);
+}
+
+/* pinta bolinha do carrossel de PACKS */
+#slideA:checked ~ .navegar-packs label[for="slideA"],
+#slideB:checked ~ .navegar-packs label[for="slideB"],
+#slideC:checked ~ .navegar-packs label[for="slideC"] {
+  background-color: #ec4899;
+  transform: scale(1.1);
+}
+
+/* ========= SETAS – CARROSSEL RÓTULOS ========= */
+#slide1:checked ~ .controles-setas-rotulos .seta-esquerda .seta1,
+#slide1:checked ~ .controles-setas-rotulos .seta-direita .seta1 {
+  display: flex;
+}
+
+#slide2:checked ~ .controles-setas-rotulos .seta-esquerda .seta2,
+#slide2:checked ~ .controles-setas-rotulos .seta-direita .seta2 {
+  display: flex;
+}
+
+#slide3:checked ~ .controles-setas-rotulos .seta-esquerda .seta3,
+#slide3:checked ~ .controles-setas-rotulos .seta-direita .seta3 {
+  display: flex;
+}
+
+#slide4:checked ~ .controles-setas-rotulos .seta-esquerda .seta4,
+#slide4:checked ~ .controles-setas-rotulos .seta-direita .seta4 {
+  display: flex;
+}
+
+#slide5:checked ~ .controles-setas-rotulos .seta-esquerda .seta5,
+#slide5:checked ~ .controles-setas-rotulos .seta-direita .seta5 {
+  display: flex;
+}
+
+/* ========= SETAS – CARROSSEL PACKS ========= */
+#slideA:checked ~ .controles-setas-packs .seta-esquerda .setaA,
+#slideA:checked ~ .controles-setas-packs .seta-direita .setaA {
+  display: flex;
+}
+
+#slideB:checked ~ .controles-setas-packs .seta-esquerda .setaB,
+#slideB:checked ~ .controles-setas-packs .seta-direita .setaB {
+  display: flex;
+}
+
+#slideC:checked ~ .controles-setas-packs .seta-esquerda .setaC,
+#slideC:checked ~ .controles-setas-packs .seta-direita .setaC {
+  display: flex;
+}
+
+
+/* ============================================================
+   ESPECIFICAÇÕES DA LATA
+   ============================================================ */
+
+.especificacaolata {
+  padding: 32px 0;
+}
+
+/* container que coloca os dois cards lado a lado */
+.especificacoes-grid {
+  width: 100%;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;  /* cada card com sua própria altura */
+}
+
+
+
+/* estilo base do card (vale para lata e pack) */
+.dadoslata {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  border-top: 4px solid #ec4899;
+}
+
+/* se quiser dar um toque diferente para o pack */
+.dadospack {
+  border-top: 4px solid #ec4899;  /* opcional, só um detalhe de destaque */
+}
+
+/* detalhes expansíveis */
+.dadoslata {
+  cursor: default;          /* o card em si não precisa parecer “clicável” */
+}
+
+/* tira o marcador padrão do <summary> */
+.summary-especificacao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  cursor: pointer;
+}
+
+.summary-especificacao::-webkit-details-marker {
+  display: none;
+}
+
+/* título dentro do summary alinhado certinho */
+.summary-especificacao .titulo-descricao {
+  margin-bottom: 0;   /* sobrescreve o margin-bottom padrão de h3 */
+}
+
+/* ícone de expandir/recolher */
+.icone-summary {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+/* conteúdo que será animado ao abrir/fechar */
+.conteudo-especificacao {
+  margin-top: 16px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  /* ESSENCIAL: sempre visível para o CSS, quem "esconde" é o max-height */
+  display: block;
+
+  transition: max-height 3000ms ease, opacity 3000ms ease;
+}
+
+/* quando o <details> está aberto */
+.dadoslata[open] .conteudo-especificacao {
+  max-height: 600px;   /* maior que o conteúdo, só precisa ser suficiente */
+  opacity: 1;
+}
+
+
+
+/* quando o details está aberto, gira o ícone (vira um "x" visualmente) */
+.dadoslata[open] .icone-summary {
+  transform: rotate(45deg);
+}
+
+.titulo-descricao {
+  font-size: 22px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.divTitulos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px 24px;
+}
+
+.subtitulo {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.texto-descricao {
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .especificacoes-grid {
+    flex-direction: column;
+  }
+}
+
+/* ============================================================
+   SEÇÃO PROMOÇÃO
+   ============================================================ */
+
+.secaopromocao .bloco-compre-ganhe {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.banner-compre-ganhe {
+  width: 100%;                 /* ocupa toda a largura do conteúdo da seção */
+  max-width: 100%;             /* garante que não trave em 720px */
+  height: 500px;               /* altura fixa do banner (ajuste se quiser) */
+  margin-top: 16px;            /* tira o auto centralizado */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+}
+
+.banner-compre-ganhe img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* preenche o box inteiro cortando o excesso */
+  display: block;
+}
+
+
+.bloco-como-participar {
+  text-align: center;
+}
+
+.subtituloSecao {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.grade-passos {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.cartao-passo {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+
+.cartao-passo img {
+  height: 100px;
+  object-fit: contain;
+  margin: 8px auto 8px;
+}
+
+.cartao-passo h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.cartao-passo p {
+  font-size: 14px;
+}
+
+.etiqueta-passo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background-color: #ec4899;
+  color: #ffffff;
   font-size: 12px;
-  color: var(--texto-suave);
+  font-weight: 600;
+}
+
+/* ============================================================
+   SEÇÃO CRIADORES
+   ============================================================ */
+
+/* respiro em relação à seção anterior */
+.secaocriadores {
+  padding-top: 48px;    /* mantém o topo igual às outras */
+  padding-bottom: 0px; /* diminui o espaço antes do rodapé */
+}
+
+/* descrição da seção – centralizada e com leve ajuste de margem */
+.secaocriadores .descricao-secao {
+  color: #6b7280;
+  max-width: 720px;
+  margin: 8px auto 24px;
+  text-align: center;
+}
+
+.grid-contatos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1040px;
+  margin: 16px auto 0;
+  padding: 50px;
+}
+
+/* CARD base do criador (pastilha) */
+.card-contato {
+  position: relative;
+  width: 260px;
+  min-height: 140px;
+  padding: 40px 16px 20px;    /* espaço em cima pro avatar “pra fora” */
+  border-radius: 24px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);  /* mesma sombra padrão do site */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-contato:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* avatar redondo saindo pra fora do card */
+.avatar-contato {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/* imagem dentro do avatar */
+.foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* texto do card */
+.info-contato {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nome-contato {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+.funcao-contato {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Cores de fundo dos cards (paleta das latinhas) */
+.card-contato--morango {
+  background-color: rgba(236, 72, 153, 0.12);
+}
+
+.card-contato--uva {
+  background-color: rgba(168, 85, 247, 0.12);
+}
+
+.card-contato--framboesa {
+  background-color: rgba(219, 39, 119, 0.12);
+}
+
+.card-contato--laranja {
+  background-color: rgba(251, 146, 60, 0.16);
+}
+
+.card-contato--limao {
+  background-color: rgba(250, 204, 21, 0.22);
+}
+
+/* responsivo – se quiser garantir respiro em telas menores */
+@media (max-width: 600px) {
+  .grid-contatos {
+    gap: 32px;
+  }
+
+  .card-contato {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+
+.rodape {
+  padding: 32px 24px 24px;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.conteudo-rodape {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.titulo-coluna-rodape {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.lista-contato-rodape li + li {
   margin-top: 4px;
 }
 
-/* ESPECIFICAÇÕES DA LATA  */
-
-.especificacaolata{
-display: grid;
-place-items: center;
-padding: 16px 20px;
-}
-
-.dadoslata{
-  display: grid;
-  width: 95%;
-  grid-template-columns: 1fr;
-  align-items: center;
-  gap: 12px;
-
-  background: linear-gradient(90deg, var(--cor-acento-1), var(--cor-acento-2));
-  color: #000000;
-
-  padding: 16px 20px;
-  border-radius: var(--raio-grande);
-  box-shadow: var(--sombra-cartao);
-}
-
-
-/* ==============================
-   SEÇÃO 4 - PROMOÇÕES
-   ============================== */
-
-.secaopromocao{
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 16px;
-}
-
-.secaopromocao .descricao-secao{
-  color: var(--texto-suave);
-  max-width: 800px;
-}
-
-.faixa-promocao{
-  display: flex;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 12px;
-
-  background: linear-gradient(90deg, var(--cor-acento-1), var(--cor-acento-2));
-  color: #000000;
-
-  padding: 16px 20px;
-  border-radius: var(--raio-grande);
-  box-shadow: var(--sombra-cartao);
-}
-
-.faixa-promocao .texto-faixa{
-  font-weight: 600;
-  text-align:left;
-}
-
-.imagemompromo{
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.card-promocao{
-  position: relative;
-  background: #eee;
-  border: var(--borda-suave);
-  border-radius: var(--raio-grande);
-  box-shadow: var(--sombra-cartao);
-  padding: 20px;
-  display: grid;
-  gap: 12px;
-}
-
-.acoes-card{
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.regulamento-promocao{
-  /* background: #eee;
-  border: var(--borda-suave);
-  border-radius: var(--raio-grande);
-  /* box-shadow: var(--sombra-cartao); */
-  padding: 16px 20px;
-}
-.regulamento-promocao summary{
-  cursor: pointer;
-  font-weight: 700;
-  color: var(--cor-acento-2);
-}
-.regulamento-promocao[open]{ border-color: rgba(0,0,0,.12); }
-.regulamento-promocao ul{
-  margin-top: 10px;
-  padding-left: 18px;
-  color: var(--texto-suave);
-}
-
-/* ==============================
-   SEÇÃO 5 - CRIADORES
-   ============================== */
-.secaocriadores{
-  display: grid;
-  grid-template-columns:1fr;
-  row-gap: 16px;
-}
-
-.secaocriadores .descricao-secao{
-  color: var(--texto-suave);
-  max-width: 800px;
-}
-
-.grid-contatos{
-  display: grid;
-  grid-template-columns:fr;
-  gap: 16px;
-}
-
-@media (min-width: 640px){
-  .grid-contatos{ grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 1024px){
-  .grid-contatos{ grid-template-columns: repeat(4, 1fr); }
-}
-
-.card-contato{
-  background: #fff;
-  border: var(--borda-suave);
-  border-radius: var(--raio-grande);
-  box-shadow: var(--sombra-cartao);
-  padding: 16px;
-  display: grid;
-  grid-template-columns: auto 3fr;
-  gap: 12px;
-  align-items: center;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.card-contato:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(0,0,0,.10);
-}
-
-.foto{
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  display: grid; place-items: center;
-  color: #fff; font-weight: 800; letter-spacing: .3px;
-  background: linear-gradient(135deg, var(--cor-morango-1), var(--cor-morango-2));
-  box-shadow: 0 8px 18px rgba(0,0,0,.12);
-  user-select: none;
-}
-
-.info-contato{ display: grid; gap: 2px; }
-.nome-contato{
-  font-size: 18px;
-  font-weight: 800;
-}
-.funcao-contato{
-  color: var(--texto-suave);
+.link-contato-rodape {
   font-size: 14px;
 }
 
-/* ==============================
-   RODAPÉ
-   ============================== */
-.rodape{
-  margin-top: 32px;
-  border-top: var(--borda-suave);
-  background: #fff;
-  display: grid;
-  gap: 16px;
-  padding: 24px 4%;
+.logo-rodape {
+  margin-top: 16px;
+  text-align: center; 
 }
 
-.conteudo-rodape{
-  display: grid;
-  place-items: center;
+.logo-rodape .logo {
+  height: 56px;
+  margin: 0 auto 8px;
 }
 
-.coluna-rodape{
-  text-align: center;
-  max-width: 720px;
-  width: 100%;
-}
 
-.titulo-coluna-rodape{
-  font-size: 20px;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
 
-.lista-contato-rodape{
-  list-style: none;
-  display: grid;
-  gap: 6px;
-  padding: 0;
-  margin: 0;
-}
+@media (max-width: 768px) {
+  header {
+    padding: 10px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 
-.link-contato-rodape{
-  text-decoration: none;
-  color: inherit;
-  border-bottom: 1px dashed transparent;
-  transition: border-color .2s ease, color .2s ease;
-}
+  header nav {
+    width: 100%;
+    padding: 8px 16px;
+  }
 
-.link-contato-rodape:hover{
-  color: var(--cor-morango-2);
-  border-bottom-color: var(--cor-morango-2);
-}
+  header nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
 
-.logo-rodape{
-  display: grid;
-  place-items: center;
-  padding-top: 8px;
-  opacity: .95;
+  main {
+    padding: 24px 16px 48px;
+  }
+
+  section {
+    padding: 32px 0;
+  }
+
+  .slidesinicio {
+    height: 60vh;
+    min-height: 260px;
+  }
+
+  .content1 .slides {
+    height: 280px;
+  }
+
+  .content2 .slides2 {
+    height: 240px;
+  }
 }

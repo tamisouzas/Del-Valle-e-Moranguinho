@@ -10,430 +10,590 @@
 </head>
 <body>
 
-    <!-- HEARDER -->
+    <!-- HEADER -->
     <header>
-        <a href="#" class="logo">
-     <img class="logotipo" src="Imagens/logo-DM.png" alt="Logo Moranguinho" id="Início">
-    </a>
-       <nav>
-        <ul> 
-            <li><a class="menu-link" href="#Collab">Collab</a></li>           
-            <li><a class="menu-link" href="#Produtos">Produtos</a></li>
-            <li><a class="menu-link" href="#Criação">Criação</a></li>
-            <li><a class="menu-link" href="#Promoção">Promoção</a></li>
-            <li><a class="menu-link" href="#Criadores">Criadores</a></li>
-        </ul>
+        <a href="#Início" class="logo">
+            <img class="logotipo" src="imagens/logo-DM2.jpg" alt="Logo Del Valle e Moranguinho">
+        </a>
+        <nav aria-label="Navegação principal">
+            <ul>
+                <li><a class="menu-link" href="#Collab">Collab</a></li>
+                <li><a class="menu-link" href="#Produtos">Produtos</a></li>
+                <li><a class="menu-link" href="#Criação">Criação</a></li>
+                <li><a class="menu-link" href="#Promoção">Promoção</a></li>
+                <li><a class="menu-link" href="#Criadores">Criadores</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- SEÇÃO 1 INICIO - SLIDESHOW DE IMAGENS -->
+    <main>
 
-    <section class="secaoinicio" id="Início">
-    <div class="contentinicio">
-            <div class="slidesinicio">
-                <input type="radio" name="slide" id="slideinicio1" checked>
-                <input type="radio" name="slide" id="slideinicio2">
-                <input type="radio" name="slide" id="slideinicio3">
-                <input type="radio" name="slide" id="slideinicio4">
-                        
+        <!-- SEÇÃO 1 INÍCIO - SLIDESHOW DE IMAGENS -->
+        <section class="secaoinicio" id="Início">
+            <div class="contentinicio">
+                <div class="slidesinicio">
+                <!-- Radios de controle -->
+                <input type="radio" name="slide-inicio" id="slideinicio1" checked>
+                <input type="radio" name="slide-inicio" id="slideinicio2">
+                <input type="radio" name="slide-inicio" id="slideinicio3">
+                <input type="radio" name="slide-inicio" id="slideinicio4">
+                <input type="radio" name="slide-inicio" id="slideinicio5">
+                <input type="radio" name="slide-inicio" id="slideinicio6">
+
+                <!-- Slides -->
                 <div class="slide s1">
-                    <img src="./Imagens/imagem1.jpeg" alt="Latas dos cincos sabores">   
+                    <img src="imagens/Bem-Vindo5.jpg" alt="Latas dos cinco sabores Del Valle e Moranguinho">
                 </div>
-                <div class="slide">
-                    <img src="./Imagens/imagem2.jpeg" alt="">
+                <div class="slide s2">
+                    <img src="imagens/Moranguinho.png" alt="Consumidores brindando com as latas da collab">
                 </div>
-                <div class="slide">
-                    <img src="./Imagens/imagem3.jpeg" alt="">
+                <div class="slide s3">
+                    <img src="imagens/Tortinha.png" alt="Close das latas da collab Del Valle e Moranguinho">
                 </div>
-                <div class="slide">
-                    <img src="./Imagens/imagem4.jpeg" alt="">
+                <div class="slide s4">
+                    <img src="imagens/Laranjinha.png" alt="Ambiente decorado com a collab Del Valle e Moranguinho">
                 </div>
-            
+                <div class="slide s5">
+                    <img src="imagens/Gotinha.png" alt="Ambiente decorado com a collab Del Valle e Moranguinho">
+                </div>
+                <div class="slide s6">
+                    <img src="imagens/Ameixinha.png" alt="Ambiente decorado com a collab Del Valle e Moranguinho">
+                </div>
+
+                <!-- Bolinhas -->
+                <div class="navegarinicio">
+                    <label class="bar" for="slideinicio1"></label>
+                    <label class="bar" for="slideinicio2"></label>
+                    <label class="bar" for="slideinicio3"></label>
+                    <label class="bar" for="slideinicio4"></label>
+                    <label class="bar" for="slideinicio5"></label>
+                    <label class="bar" for="slideinicio6"></label>
+
+                </div>
+
+                <!-- Setas laterais -->
+                <div class="controles-setas">
+                    <div class="seta seta-esquerda">
+                        <!-- quando estiver no slide 1, volta para o 4 -->
+                        <label class="seta-label seta1" for="slideinicio6">&#10094;</label>
+                        <!-- slide 2 volta para o 1 -->
+                        <label class="seta-label seta2" for="slideinicio1">&#10094;</label>
+                        <!-- slide 3 volta para o 2 -->
+                        <label class="seta-label seta3" for="slideinicio2">&#10094;</label>
+                        <!-- slide 4 volta para o 3 -->
+                        <label class="seta-label seta4" for="slideinicio3">&#10094;</label>
+                        <label class="seta-label seta5" for="slideinicio4">&#10094;</label>
+                        <label class="seta-label seta6" for="slideinicio5">&#10094;</label>
+                    </div>
+
+                    <div class="seta seta-direita">
+                        <!-- slide 1 vai para o 2 -->
+                        <label class="seta-label seta1" for="slideinicio2">&#10095;</label>
+                        <!-- slide 2 vai para o 3 -->
+                        <label class="seta-label seta2" for="slideinicio3">&#10095;</label>
+                        <!-- slide 3 vai para o 4 -->
+                        <label class="seta-label seta3" for="slideinicio4">&#10095;</label>
+                        <!-- slide 4 volta para o 1 -->
+                        <label class="seta-label seta4" for="slideinicio5">&#10095;</label>
+                        <label class="seta-label seta5" for="slideinicio6">&#10095;</label>
+                        <label class="seta-label seta6" for="slideinicio1">&#10095;</label>
+                    </div>
+                </div>
+                </div>
             </div>
-            <div class="navegarinicio">
-                <label class="bar" for="slideinicio1"></label>
-                <label class="bar" for="slideinicio2"></label>
-                <label class="bar" for="slideinicio3"></label>
-                <label class="bar" for="slideinicio4"></label>
-                    
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SEÇÃO 1/2COLLAB -->
 
-    <section class="secaocollab" id="Collab">
-    <h2 class="tituloSecao"> Edição Limitada </h2>
-    <p> Dell Valle e Moranguinho</p>   
+        <!-- SEÇÃO 1/2 - COLLAB -->
+        <section class="secaocollab" id="Collab">
+            <h2 class="tituloSecao">Edição Limitada</h2>
 
-        <div class="divInformacao">
-           <div class="informacoesmarca"> 
-                <img src="Imagens/logodelvalle.webp" alt="logo Del Valle"> 
-                <h3 class="titulo-marca">Dell Valle</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iusto, perspiciatis fugit deleniti, adipisci voluptate dolores sequi nostrum minus ad atque, et dignissimos quod ducimus eveniet sed rerum debitis repellat.</p>
-            </div>
-
-            <div class="informacoesmarca">
-                <img src="Imagens/moranguinho-logo.png" alt="logo moranguinho-logo">
-                <h3 class="titulo-marca">Moranguinho</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui vel quaerat beatae facere, nam atque quae libero nisi explicabo ipsam pariatur nihil magnam! Eum officia quis nisi provident et repellendus?</p>
-            </div>
-        </div>
-    
-    </section>
-
-    <!-- SEÇÃO 2/2 - PRODUTOS -->
-
-    <section class="secaoproduto" id="Produtos">
-    <h2 class="tituloSecao">Nossos sabores</h2>
-
-    <div class="divCards">
-            <div class="card">
-                <img src="./imagens/Imagens/logo-DM.png">
-                <div class="conteudocard">  
-                    <h3>Sabor morango</h3>
-                    <p>Lorem Ipsum has been industry's standard dummy text ever</p>
+            <div class="divInformacao">
+                <div class="informacoesmarca">
+                    <img src="imagens/logodelvalle.webp" alt="Logo Del Valle">
+                    <h3 class="titulo-marca">Del Valle</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iusto, perspiciatis fugit deleniti, adipisci voluptate dolores sequi nostrum minus ad atque, et dignissimos quod ducimus eveniet sed rerum debitis repellat.</p>
                 </div>
-            </div> 
-            <div class="card">
-                <img src="./imagens/Imagens/logo-DM.png">
-                <div class="conteudocard">  
+
+                <div class="informacoesmarca">
+                    <img src="imagens/moranguinho-logo.png" alt="Logo Moranguinho">
+                    <h3 class="titulo-marca">Moranguinho</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui vel quaerat beatae facere, nam atque quae libero nisi explicabo ipsam pariatur nihil magnam! Eum officia quis nisi provident et repellendus?</p>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <!-- SEÇÃO 2/2 - PRODUTOS -->
+        <section class="secaoproduto" id="Produtos">
+            <h2 class="tituloSecao">Nossos sabores</h2>
+
+            <div class="divCards">
+
+                <article class="card card-morango">
+                <div class="card-imagem">
+                    <img src="imagens/morango.png" alt="Lata Del Valle sabor morango">
+                </div>
+                <div class="card-conteudo">
+                    <h3>Sabor Morango</h3>
+                    <p>Um suco refrescante que combina com a doçura e energia. Ideal para quem ama sabor marcante e aquele toque especial que só a Moranguinho tem.</p>
+                </div>
+                </article>
+
+                <article class="card card-laranja">
+                <div class="card-imagem">
+                    <img src="imagens/latalaranja.png" alt="Lata Del Valle sabor laranja">
+                </div>
+                <div class="card-conteudo">
                     <h3>Sabor Laranja</h3>
-                    <p>Lorem Ipsum has been industry's standard dummy text ever</p>
+                    <p>Um suco cheio de vivacidade e equilíbrio, perfeito para dias alegres. Um gole e você já sente o bom humor da Laranjinha.</p>
                 </div>
-            </div>
-            <div class="card">
-                <img src="./imagens/Imagens/logo-DM.png">
-                <div class="conteudocard">  
+                </article>
+
+                <article class="card card-limao">
+                <div class="card-imagem">
+                    <img src="imagens/latalimao.png" alt="Lata Del Valle sabor limão">
+                </div>
+                <div class="card-conteudo">
                     <h3>Sabor Limão</h3>
-                    <p>Lorem Ipsum has been industry's standard dummy text ever</p>
+                    <p>Um sabor levinho, refrescante e com aquele toque cítrico irresistível. Ideal para quem gosta de um sabor marcante, como a Limãozinho.</p>
                 </div>
-            </div>
-            <div class="card">
-                <img src="./imagens/Imagens/logo-DM.png">
-                <div class="conteudocard">  
-                    <h3>Sabor Bluberry</h3>
-                    <p>Lorem Ipsum has been industry's standard dummy text ever</p>
+                </article>
+
+                <article class="card card-blueberry">
+                <div class="card-imagem">
+                    <img src="imagens/latabluberry.png" alt="Lata Del Valle sabor blueberry">
                 </div>
-            </div>
-            <div class="card">
-                <img src="./imagens/Imagens/logo-DM.png">
-                <div class="conteudocard">  
+                <div class="card-conteudo">
+                    <h3>Sabor Blueberry</h3>
+                    <p>Moderno, diferente e encantador, assim como a Tortinha de Blueberry! Refrescante, levemente doce e cheio de personalidade.</p>
+                </div>
+                </article>
+
+                <article class="card card-ameixa">
+                <div class="card-imagem">
+                    <img src="imagens/lataameixa.png" alt="Lata Del Valle sabor ameixa">
+                </div>
+                <div class="card-conteudo">
                     <h3>Sabor Ameixa</h3>
-                    <p>Lorem Ipsum has been industry's standard dummy text ever</p>
+                    <p>O suco de ameixa combina suavidade com um toque levemente adocicado, criando um sabor elegante e um frescor único, exatamente como a Ameixinha.</p>
                 </div>
+                </article>
+
             </div>
-        
-        </div>
-    </section>
+        </section>
 
-    <!-- SEÇÃO 3 - CRIÇÃO -->
+        <hr>
+        <!-- SEÇÃO 3 - CRIAÇÃO -->
+        <section class="secaocriacao" id="Criação">
+            <h2 class="tituloSecao">Processo Criativo</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem non eos, tempora earum temporibus, libero laboriosam fuga nulla necessitatibus unde beatae sit ab inventore dicta animi eveniet voluptate delectus recusandae?</p>
 
-    <section class="secaocriacao" id="Criação">
+            <div class="painel-estudo" aria-label="Painel de estudo de estilos">
 
-    <h2 class="tituloSecao">Processo Criativo</h2>
-        <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem non eos, tempora earum temporibus, libero laboriosam fuga nulla necessitatibus unde beatae sit ab inventore dicta animi eveniet voluptate delectus recusandae?</p>
-        <div class="painel-estudo" aria-label="Painel de estudo de estilos">
-        
-            <!-- Paleta de Cores -->
-        <div class="cartao-estudo">
-            <!-- Ícone (paleta) -->
-            <svg class="icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
-                <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
-                <circle cx="8.5"  cy="7.5" r=".5" fill="currentColor"></circle>
-                <circle cx="6.5"  cy="12.5" r=".5" fill="currentColor"></circle>
-                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688
-                        0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1
-                        1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z">
-                </path>
-            </svg>
+                <!-- Paleta de Cores -->
+                <div class="cartao-estudo">
 
-            <h3 class="titulo-cartao">Paleta de Cores</h3>
+                    <h3 class="titulo-cartao">Paleta de Cores</h3>
 
-            <div class="lista-cores">
-                <div class="linha-cor">
-                <div class="amostras">
-                    <div class="amostra" style="background: var(--cor-morango-1)"></div>
-                    <div class="amostra" style="background: var(--cor-morango-2)"></div>
-                </div>
-                <p class="descricao-cor">Morango — <code>#EC4899</code> / <code>#EF4444</code></p>
-                </div>
+                    <div class="lista-cores">
+                        <div class="linha-cor">
+                            <div class="amostras">
+                            <div class="amostra amostra-morango-1"></div>
+                            <div class="amostra amostra-morango-2"></div>
+                            </div>
+                            <p class="descricao-cor">Morango — <code>#EC4899</code> / <code>#EF4444</code></p>
+                            
+                        </div>
 
-                <div class="linha-cor">
-                <div class="amostras">
-                    <div class="amostra" style="background: var(--cor-uva-1)"></div>
-                    <div class="amostra" style="background: var(--cor-uva-2)"></div>
-                </div>
-                <p class="descricao-cor">Uva — <code>#A855F7</code> / <code>#7C3AED</code></p>
-                </div>
+                        <div class="linha-cor">
+                            <div class="amostras">
+                            <div class="amostra amostra-uva-1"></div>
+                            <div class="amostra amostra-uva-2"></div>
+                            </div>
+                            <p class="descricao-cor">Uva — <code>#A855F7</code> / <code>#7C3AED</code></p>
+                        </div>
 
-                <div class="linha-cor">
-                <div class="amostras">
-                    <div class="amostra" style="background: var(--cor-framboesa-1)"></div>
-                    <div class="amostra" style="background: var(--cor-framboesa-2)"></div>
-                </div>
-                <p class="descricao-cor">Framboesa — <code>#DB2777</code> / <code>#C026D3</code></p>
-                </div>
+                        <div class="linha-cor">
+                            <div class="amostras">
+                            <div class="amostra amostra-framboesa-1"></div>
+                            <div class="amostra amostra-framboesa-2"></div>
+                            </div>
+                            <p class="descricao-cor">Framboesa — <code>#DB2777</code> / <code>#C026D3</code></p>
+                        </div>
 
-                <div class="linha-cor">
-                <div class="amostras">
-                    <div class="amostra" style="background: var(--cor-laranja-1)"></div>
-                    <div class="amostra" style="background: var(--cor-laranja-2)"></div>
-                </div>
-                <p class="descricao-cor">Laranja — <code>#FB923C</code> / <code>#EAB308</code></p>
+                        <div class="linha-cor">
+                            <div class="amostras">
+                            <div class="amostra amostra-laranja-1"></div>
+                            <div class="amostra amostra-laranja-2"></div>
+                            </div>
+                            <p class="descricao-cor">Laranja — <code>#FB923C</code> / <code>#EAB308</code></p>
+                        </div>
+
+                        <div class="linha-cor">
+                            <div class="amostras">
+                            <div class="amostra amostra-limao-1"></div>
+                            <div class="amostra amostra-limao-2"></div>
+                            </div>
+                            <p class="descricao-cor">Limão — <code>#FACC15</code> / <code>#84CC16</code></p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="linha-cor">
-                <div class="amostras">
-                    <div class="amostra" style="background: var(--cor-limao-1)"></div>
-                    <div class="amostra" style="background: var(--cor-limao-2)"></div>
-                </div>
-                <p class="descricao-cor">Limão — <code>#FACC15</code> / <code>#84CC16</code></p>
-                </div>
-            </div>
-        </div>
+                <!-- Tipografia -->
+                <div class="cartao-estudo">
 
-        <!-- Tipografia -->
-        <div class="cartao-estudo">
-        <!-- Ícone (caixa) -->
-        <svg class="icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" aria-hidden="true">
-            <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0
-                    0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path>
-            <path d="M12 22V12"></path>
-            <path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"></path>
-            <path d="m7.5 4.27 9 5.15"></path>
-        </svg>
+                    <h3 class="titulo-cartao">Tipografia</h3>
 
-        <h3 class="titulo-cartao">Tipografia</h3>
+                    <div class="lista-tipografia">
+                        <div class="tipografia-item">
+                            <p class="rotulo">Logo</p>
+                            <p class="logo-delvalle">Del Valle</p>
+                            <p class="texto-nota">Script para assinatura (usa <strong>Pacifico</strong> se o Passo 1 estiver ativo).</p>
+                        </div>
 
-        <div class="lista-tipografia">
-            <div class="tipografia-item">
-            <p class="rotulo">Logo</p>
-            <p class="logo-delvalle">Del Valle</p>
-            <p class="texto-nota">Script para assinatura (usa <strong>Pacifico</strong> se o Passo 1 estiver ativo).</p>
-            </div>
+                        <div class="tipografia-item">
+                            <p class="rotulo">Nome do sabor</p>
+                            <p class="titulo-sabor">MORANGUINHO</p>
+                            <p class="texto-nota">Sans-serif com peso forte (Poppins 800).</p>
+                        </div>
 
-            <div class="tipografia-item">
-            <p class="rotulo">Nome do sabor</p>
-            <p class="titulo-sabor">MORANGUINHO</p>
-            <p class="texto-nota">Sans-serif com peso forte (Poppins 800).</p>
-            </div>
-
-            <div class="tipografia-item">
-            <p class="rotulo">Informações</p>
-            <p class="texto-informacao">Informações nutricionais e ingredientes</p>
-            <p class="texto-nota">Sans-serif regular (Poppins 400), tamanho menor para blocos densos.</p>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <!-- CARROSSEL DE CRIAÇÕES EMBALAGEM/LATA -->
-    <div class="content1">
-            <div class="slides">
-                <input type="radio" name="slide" id="slide1" checked>
-                <input type="radio" name="slide" id="slide2">
-                <input type="radio" name="slide" id="slide3">
-                <input type="radio" name="slide" id="slide4">
-                <input type="radio" name="slide" id="slide5">
-                        
-                <div class="slide s1">
-                    <img src="Rotulos/rotulo1.jpeg" alt="">   
-                </div>
-                <div class="slide">
-                    <img src="Rotulos/rotulo2.jpeg" alt="">
-                </div>
-                <div class="slide">
-                    <img src="Rotulos/rotulo3.jpeg" alt="">
-                </div>
-                <div class="slide">
-                    <img src="Rotulos/rotulo4.jpeg" alt="">
-                </div>
-                <div class="slide">
-                    <img src="Rotulos/rotulo5.jpeg" alt="">
-                </div>
-        </div>
-            <div class="navegar">
-                <label class="bar" for="slide1"></label>
-                <label class="bar" for="slide2"></label>
-                <label class="bar" for="slide3"></label>
-                <label class="bar" for="slide4"></label> 
-                <label class="bar" for="slide5"></label>        
-            </div>
-    </div>
-
-        <div class="content2">
-            <div class="slides2">
-                <input type="radio" name="slide" id="slideA" checked>
-                <input type="radio" name="slide" id="slideB">
-                <input type="radio" name="slide" id="slideC">
-                                    
-                <div class="slide s1">
-                    <img src="Rotulos/pack1.webp" alt="">   
-                </div>
-                <div class="slide">
-                    <img src="Rotulos/pack2.jpg" alt="">
-                </div>
-                <div class="slide">
-                    <img src="Rotulos/pack3.webp" alt="">
+                        <div class="tipografia-item">
+                            <p class="rotulo">Informações</p>
+                            <p class="texto-informacao">Informações nutricionais e ingredientes</p>
+                            <p class="texto-nota">Sans-serif regular (Poppins 400), tamanho menor para blocos densos.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="navegar2">
-                <label class="bar" for="slideA"></label>
-                <label class="bar" for="slideB"></label>
-                <label class="bar" for="slideC"></label>       
+            <!-- CARROSSEL DE CRIAÇÕES EMBALAGEM/LATA -->
+            <div class="carrosseis-criacao">
+
+                <!-- CARROSSEL 1 – RÓTULOS -->
+                <div class="content1">
+                    <div class="slides slides-rotulos">
+                    <!-- radios -->
+                    <input type="radio" name="slider-rotulos" id="slide1" checked>
+                    <input type="radio" name="slider-rotulos" id="slide2">
+                    <input type="radio" name="slider-rotulos" id="slide3">
+                    <input type="radio" name="slider-rotulos" id="slide4">
+                    <input type="radio" name="slider-rotulos" id="slide5">
+
+                    <!-- slides -->
+                    <div class="slide s1">
+                        <img src="Rotulos/rotulo1.jpeg" alt="Rótulo 1 Del Valle Moranguinho">
+                    </div>
+                    <div class="slide">
+                        <img src="Rotulos/rotulo2.jpeg" alt="Rótulo 2 Del Valle Moranguinho">
+                    </div>
+                    <div class="slide">
+                        <img src="Rotulos/rotulo3.jpeg" alt="Rótulo 3 Del Valle Moranguinho">
+                    </div>
+                    <div class="slide">
+                        <img src="Rotulos/rotulo4.jpeg" alt="Rótulo 4 Del Valle Moranguinho">
+                    </div>
+                    <div class="slide">
+                        <img src="Rotulos/rotulo5.jpeg" alt="Rótulo 5 Del Valle Moranguinho">
+                    </div>
+
+                    <!-- bolinhas -->
+                    <div class="navegar navegar-rotulos">
+                        <label class="bar" for="slide1"></label>
+                        <label class="bar" for="slide2"></label>
+                        <label class="bar" for="slide3"></label>
+                        <label class="bar" for="slide4"></label>
+                        <label class="bar" for="slide5"></label>
+                    </div>
+
+                    <!-- setas -->
+                    <div class="controles-setas controles-setas-rotulos">
+                        <div class="seta seta-esquerda">
+                        <label class="seta-label seta1" for="slide5">&#10094;</label>
+                        <label class="seta-label seta2" for="slide1">&#10094;</label>
+                        <label class="seta-label seta3" for="slide2">&#10094;</label>
+                        <label class="seta-label seta4" for="slide3">&#10094;</label>
+                        <label class="seta-label seta5" for="slide4">&#10094;</label>
+                        </div>
+                        <div class="seta seta-direita">
+                        <label class="seta-label seta1" for="slide2">&#10095;</label>
+                        <label class="seta-label seta2" for="slide3">&#10095;</label>
+                        <label class="seta-label seta3" for="slide4">&#10095;</label>
+                        <label class="seta-label seta4" for="slide5">&#10095;</label>
+                        <label class="seta-label seta5" for="slide1">&#10095;</label>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- CARROSSEL 2 – PACKS -->
+                <div class="content2">
+                    <div class="slides2 slides-packs">
+                    <!-- radios -->
+                    <input type="radio" name="slider-packs" id="slideA" checked>
+                    <input type="radio" name="slider-packs" id="slideB">
+                    <input type="radio" name="slider-packs" id="slideC">
+
+                    <!-- slides -->
+                    <div class="slide s1">
+                        <img src="Rotulos/pack1.webp" alt="Pack 1 latas Del Valle Moranguinho">
+                    </div>
+                    <div class="slide">
+                        <img src="Rotulos/pack2.jpg" alt="Pack 2 latas Del Valle Moranguinho">
+                    </div>
+                    <div class="slide">
+                        <img src="Rotulos/pack3.webp" alt="Pack 3 latas Del Valle Moranguinho">
+                    </div>
+
+                    <!-- bolinhas -->
+                    <div class="navegar2 navegar-packs">
+                        <label class="bar" for="slideA"></label>
+                        <label class="bar" for="slideB"></label>
+                        <label class="bar" for="slideC"></label>
+                    </div>
+
+                    <!-- setas -->
+                    <div class="controles-setas controles-setas-packs">
+                        <div class="seta seta-esquerda">
+                        <label class="seta-label setaA" for="slideC">&#10094;</label>
+                        <label class="seta-label setaB" for="slideA">&#10094;</label>
+                        <label class="seta-label setaC" for="slideB">&#10094;</label>
+                        </div>
+                        <div class="seta seta-direita">
+                        <label class="seta-label setaA" for="slideB">&#10095;</label>
+                        <label class="seta-label setaB" for="slideC">&#10095;</label>
+                        <label class="seta-label setaC" for="slideA">&#10095;</label>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
 
-                   
-    </section>
-
-     <!-- ESPECIFICAÇÕES DA LATA -->
-      <div class="especificacaolata">
-            <Card class="dadoslata">  
-              <h3 class="titulo-descricao">Especificações da Lata</h3>
-
-              <div class="divTitulos">
-                <div>
-                    <h4 class="subtitulo">Materiais</h4>
-                    <p class="texto-descricao">Adesivo auto colante</p>
-                    <p className="texto-descricao">Alumínio reciclável de alta qualidade, acabamento fosco com verniz UV localizado</p>
+        <!-- ESPECIFICAÇÕES – LATA E PACK -->
+        <section class="especificacaolata" id="Especificacoes">
+            <div class="especificacoes-grid">
+                <!-- Card 1 – Lata -->
+                <details class="dadoslata">
+                <summary class="summary-especificacao">
+                    <h3 class="titulo-descricao">Especificações da Lata</h3>
+                    <span class="icone-summary">+</span>
+                </summary>
+                <div class="conteudo-especificacao">
+                    <div class="divTitulos">
+                    <div>
+                        <h4 class="subtitulo">Materiais</h4>
+                        <p class="texto-descricao">Adesivo autocolante</p>
+                        <p class="texto-descricao">
+                        Alumínio reciclável de alta qualidade, acabamento fosco com verniz UV localizado.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="subtitulo">Dimensões</h4>
+                        <p class="texto-descricao">
+                        Lata padrão 350 ml – Altura: 12,3 cm | Diâmetro: 6,6 cm.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="subtitulo">Impressão</h4>
+                        <p class="texto-descricao">
+                        Offset 6 cores + verniz UV seletivo nos elementos principais.
+                        </p>
+                    </div>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="subtitulo"> Dimensões</h4><a>                
-                    <p class="texto-descricao">Lata padrão 350ml - Altura: 12,3cm | Diâmetro: 6,6cm</p>
+                </details>
+
+                <!-- Card 2 – Pack -->
+                <details class="dadoslata dadospack">
+                <summary class="summary-especificacao">
+                    <h3 class="titulo-descricao">Especificações do Pack</h3>
+                    <span class="icone-summary">+</span>
+                </summary>
+                <div class="conteudo-especificacao">
+                    <div class="divTitulos">
+                    <div>
+                        <h4 class="subtitulo">Materiais</h4>
+                        <p class="texto-descricao">
+                        Papel cartão de alta gramatura com reforço interno.
+                        </p>
+                        <p class="texto-descricao">
+                        Acabamento fosco com detalhes em verniz localizado.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="subtitulo">Dimensões</h4>
+                        <p class="texto-descricao">
+                        Pack com 4 latas – Altura: 13,5 cm | Largura: 14,0 cm | Profundidade: 7,0 cm.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="subtitulo">Impressão</h4>
+                        <p class="texto-descricao">
+                        Impressão offset 4 cores + reserva de branco; hot stamping opcional.
+                        </p>
+                    </div>
+                    </div>
                 </div>
-                <div>
-                  <h4 class="subtitulo">Impressão</h4>
-                  <p class="texto-descricao"> Offset 6 cores + verniz UV seletivo nos elementos principais</p>
+                </details>
+            </div>
+        </section>
+
+
+        <!-- SEÇÃO 4 - PROMOÇÕES -->
+        <section class="secaopromocao" id="Promoção">
+            <div class="bloco-compre-ganhe">
+                <h2 class="tituloSecao">Promoções</h2>
+                <p class="descricao-secao">
+                    Compre Del Valle + Moranguinho e concorra a brindes exclusivos.
+                </p>
+
+                <div class="banner-compre-ganhe">
+                    <img src="imagens/amigas.jpg"
+                        alt="Amigas brindando com as latas da promoção Del Valle e Moranguinho">
                 </div>
-              </div>
-            </Card>
-      </div>      
+            </div>
 
-       <!-- SEÇÃO 4 - PROMOÇÕES -->
-    <section class="secaopromocao" id="Promoção">
-    <h2 class="tituloSecao">Promoções</h2>
-       <p class="descricao-secao">
-        Participe das ofertas e concorra a brindes oficiais. Válido por tempo limitado.
-    </p>
+            <div class="bloco-como-participar">
+                <h3 class="subtituloSecao">Como funciona ?</h3>
+                <p class="descricao-secao">
+                    Siga os passos abaixo para garantir seu brinde.
+                </p>
 
-    <!-- Destaque da promoção atual -->
-    <div class="faixa-promocao" role="note" aria-label="Destaque de promoção vigente">
-       
-        <div class="texto-faixa">
-        <h1>COMPRE E GANHE!</h1> 
-        <p>Compre do pack ganhe um copo exclusivo e personalizado. </p>
-        </div>  
-          
-    </div>
-        <div class="imagempromo">
-          <img src="Imagens/amigas.jpg" alt="">
-        </div>
+                <div class="grade-passos">
+                    <article class="cartao-passo">
+                        <span class="etiqueta-passo">1</span>
+                        <img src="imagens/morango.png" alt="Lata Del Valle sabor morango">
+                        <h4>Compre os produtos participantes</h4>
+                        <p>Adquira Del Valle + Moranguinho nos pontos de venda participantes.</p>
+                    </article>
+                    <article class="cartao-passo">
+                        <span class="etiqueta-passo">2</span>
+                        <img src="imagens/latalaranja.png" alt="Lata Del Valle sabor laranja">
+                        <h4>Cadastre sua compra</h4>
+                        <p>Guarde o cupom e faça o cadastro no site da promoção ou no ponto de troca.</p>
+                    </article>
+                    <article class="cartao-passo">
+                        <span class="etiqueta-passo">3</span>
+                        <img src="imagens/latalimao.png" alt="Lata Del Valle sabor limão">
+                        <h4>Valide os dados</h4>
+                        <p>Confirme seus dados pessoais e finalize o envio do comprovante.</p>
+                    </article>
+                    <article class="cartao-passo">
+                        <span class="etiqueta-passo">4</span>
+                        <img src="imagens/latabluberry.png" alt="Lata Del Valle sabor blueberry">
+                        <h4>Ganhe e concorra</h4>
+                        <p>Retire seu brinde e, se a mecânica prever, participe dos sorteios.</p>
+                    </article>
+                </div>
+            </div>
 
-    <!-- Regulamento  -->
-    <details class="regulamento-promocao" id="Regulamento">
-        <summary>Regulamento</summary>
-        <ul>
-        <li>Período: campanhas vigentes enquanto durarem os estoques.</li>
-        <li>Descontos não cumulativos</li>
-        <li>Imagens meramente ilustrativas. Consulte pontos participantes.</li>
-        <li>Brindes limitados; 1 por CPF/compra elegível.</li>
-        </ul>
-    </details>
-    </section>
+            <!-- Regulamento comentado por enquanto
+            <details class="card-regulamento">
+                <summary>Regulamento da promoção</summary>
 
-    <!-- SEÇÃO 5 - CONTATOS -->
-    <section class="secaocriadores" id="Criadores">
+                <div class="conteudo-regulamento">
+                    <p class="texto-intro-regulamento">
+                        Leia atentamente o regulamento antes de participar da promoção:
+                    </p>
+                    <ul>
+                        <li>Período: campanhas vigentes enquanto durarem os estoques.</li>
+                        <li>Promoção válida apenas nos pontos de venda participantes.</li>
+                        <li>Descontos não cumulativos com outras promoções.</li>
+                        <li>Brindes limitados; 1 por CPF/compra elegível.</li>
+                        <li>Guarde o comprovante de compra para eventual validação.</li>
+                    </ul>
+                </div>
+            </details>
+            -->
+        </section>
 
-    <h2 class="tituloSecao">Criadores</h2>
-    <p class="descricao-secao">Fale com nosso time de criação e design.</p>
+        <!-- SEÇÃO 5 - CRIADORES -->
+        <section class="secaocriadores" id="Criadores">
+            <h2 class="tituloSecao">Criadores</h2>
+            <p class="descricao-secao">Fale com nosso time de criação e design.</p>
 
-    <div class="grid-contatos">
-        <!-- Card 1 -->
-         <article class="card-contato" aria-label="Contato: Tamires Souza, Designer de produto">
-        <div class="avatar-contato" >
-            <img class="foto" src="Imagens/camila.png" alt="foto Tamires">
-        </div>
-        <div class="info-contato">
-            <h3 class="nome-contato">Camila Azevedo</h3>
-            <p class="funcao-contato">Designer de produto</p>
-        </div>
-        </article>
+            <div class="grid-contatos">
 
-        <!-- Card 2 -->
-        <article class="card-contato" aria-label="Contato: Evelyn, Designer de produto">
-        <div class="avatar-contato">
-            <img class="foto" src="Imagens/Evelyn.png" alt="">
-        <div class="info-contato">
-            <h3 class="nome-contato">Evelyn Ellen</h3>
-            <p class="funcao-contato">Designer de produto</p>
-        </div>
-        </article>
+                <!-- Card 1 -->
+                <article class="card-contato card-contato--morango" aria-label="Contato: Camila Azevedo, Designer de Produto">
+                    <div class="avatar-contato">
+                        <img class="foto" src="imagens/camila.png" alt="Foto de Camila Azevedo">
+                    </div>
+                    <div class="info-contato">
+                        <h3 class="nome-contato">Camila Azevedo</h3>
+                        <p class="funcao-contato">Designer de Produto</p>
+                    </div>
+                </article>
 
-        <!-- Card 3 -->
-        <article class="card-contato" aria-label="Contato: Simone Cantil, Designer de produto">
-        <div class="avatar-contato">
-            <img class="foto" src="Imagens/Simone.png" alt="">
-        <div class="info-contato">
-            <h3 class="nome-contato">Simone Cantil</h3>
-            <p class="funcao-contato">Designer de produto</p>
-        </div>
-        </article>
+                <!-- Card 2 -->
+                <article class="card-contato card-contato--uva" aria-label="Contato: Evelyn Ellen, Designer de Produto">
+                    <div class="avatar-contato">
+                        <img class="foto" src="imagens/Evelyn.png" alt="Foto de Evelyn Ellen">
+                    </div>
+                    <div class="info-contato">
+                        <h3 class="nome-contato">Evelyn Ellen</h3>
+                        <p class="funcao-contato">Designer de Produto</p>
+                    </div>
+                </article>
 
-        <!-- Card 4 -->
-        <article class="card-contato" aria-label="Contato: Tamires Souza, Designer de produto">
-        <div class="avatar-contato" >
-            <img class="foto" src="Imagens/time.png" alt="foto Tamires"> 
-        </div>
-        <div class="info-contato">
-            <h3 class="nome-contato">Tamires Souza</h3>
-            <p class="funcao-contato">Designer de produto</p>
-        </div>
-        </article>
+                <!-- Card 3 -->
+                <article class="card-contato card-contato--framboesa" aria-label="Contato: Simone Cantil, Designer de Produto">
+                    <div class="avatar-contato">
+                        <img class="foto" src="imagens/Simone.png" alt="Foto de Simone Cantil">
+                    </div>
+                    <div class="info-contato">
+                        <h3 class="nome-contato">Simone Cantil</h3>
+                        <p class="funcao-contato">Designer de Produto</p>
+                    </div>
+                </article>
 
-        <!-- Card 5 -->
+                <!-- Card 4 -->
+                <article class="card-contato card-contato--laranja" aria-label="Contato: Tamires Souza, Designer de Produto">
+                    <div class="avatar-contato">
+                        <img class="foto" src="imagens/time.png" alt="Foto de Tamires Souza">
+                    </div>
+                    <div class="info-contato">
+                        <h3 class="nome-contato">Tamires Souza</h3>
+                        <p class="funcao-contato">Designer de Produto</p>
+                    </div>
+                </article>
 
-        <article class="card-contato" aria-label="Contato: Thayza, Designer de produto">
-        <div class="avatar-contato">
-            <img class="foto" src="Imagens/thayza.jpeg" alt="">
-        <div class="info-contato">
-            <h3 class="nome-contato">Thayza</h3>
-            <p class="funcao-contato">Designer de produto</p>
-        </div>
-        </article>
-    </div>
-    </section>
+                <!-- Card 5 -->
+                <article class="card-contato card-contato--limao" aria-label="Contato: Thayza Sousa, Designer de Produto">
+                    <div class="avatar-contato">
+                        <img class="foto" src="imagens/thayza.jpeg" alt="Foto de Thayza Sousa">
+                    </div>
+                    <div class="info-contato">
+                        <h3 class="nome-contato">Thayza Sousa</h3>
+                        <p class="funcao-contato">Designer de Produto</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
 
     <!-- RODAPÉ -->
     <footer class="rodape" id="Rodape" aria-label="Rodapé do site">
-    <!-- Coluna única centralizada -->
-    <div class="conteudo-rodape">
-        <div class="coluna-rodape coluna-contato" aria-label="Informações de contato">
-        <h3 class="titulo-coluna-rodape">Contato</h3>
-        <ul class="lista-contato-rodape">
-            <!-- Use seus dados reais depois -->
-            <li><a class="link-contato-rodape" href="mailto:contato@exemplo.com">contato@exemplo.com</a></li>
-            <li><a class="link-contato-rodape" href="tel:+5511999999999">(11) 99999-9999</a></li>
-            <li><a class="link-contato-rodape" href="#Contatos">Fale com o time</a></li>
-        </ul>
+        <div class="conteudo-rodape">
+            <div class="coluna-rodape coluna-contato" aria-label="Informações de contato">
+            <h3 class="titulo-coluna-rodape">Contato</h3>
+            <ul class="lista-contato-rodape">
+                <li><a class="link-contato-rodape" href="mailto:contato@exemplo.com">contato@exemplo.com</a></li>
+                <li><a class="link-contato-rodape" href="tel:+5511999999999">(11) 99999-9999</a></li>
+            </ul>
+            </div>
         </div>
-    </div>
 
-    <!-- Logotipo abaixo, centralizado -->
-    <div class="logo-rodape">
-        <img class="logo" src="Imagens/moranguinho-logo.png" alt="Logo Moranguinho">
-    </div>
+        <div class="logo-rodape">
+            <img class="logo" src="imagens/logo-DM2.jpg" alt="Logo Moranguinho">
+            <p class="copyright">
+            © 2025 Felipe &amp; Lindo. Todos os direitos reservados.
+            </p>
+        </div>
     </footer>
+
+
 </body>
-
 </html>
-
-
-
