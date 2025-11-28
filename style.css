@@ -1,7 +1,3 @@
-/* ============================================================
-   RESET SIMPLES
-   ============================================================ */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,20 +8,42 @@ body {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #1f2933;             /* cinza bem escuro */
-  background-image: linear-gradient(
+  color: #1f2933;            
+  background-image: linear-gradient( 
     to bottom,
-    #d1b1bc 0%,    /* topo branco */
+    #f1e5e9 0%,    
     #fff7fb 18%,
 
-    #fff7fb 18%,  /* faixa central rosé */
-    #d1b1bc 55%,
+    #fff7fb 18%,  
+    #f1e5e9 55%,
 
-    #d1b1bc 55%,  /* parte de baixo levemente rosada, combinando com o site */
-    #fff7fb 100%
-  );
+    #f1e5e9 55%, 
+    #fff7fb 100%);
+
   -webkit-font-smoothing: antialiased;
 }
+ 
+/* LINHA DE SEPARAÇÃO */
+.hr-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;            /* espaço entre linhas e imagem */
+    margin: 40px 0;
+}
+
+.hr-custom .linha {
+    flex: 1;
+    height: 1.5px;
+    background-color: #ff336633; /* cor da linha */
+}
+
+.hr-custom img {
+    width: 35px;         /* ajuste o tamanho do laço */
+    height: auto;
+    display: block;
+}
+
 
 img {
   max-width: 100%;
@@ -43,32 +61,24 @@ ul {
 
 p {
   margin-bottom: 16px;
-  color: #4b5563; /* cinza médio para textos */
+  color: #4b5563; 
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
   margin-bottom: 16px;
   font-weight: 700;
   line-height: 1.2;
 }
 
-/* ============================================================
-   LAYOUT GERAL
-   ============================================================ */
 
 main {
-  max-width: 1440px;      /* antes 1200px */
+  max-width: 1440px;     
   margin: 0 auto;
-  padding: 80px 16px 64px; /* antes 24px */
+  padding: 80px 16px 64px; 
 }
 
 section {
-  padding: 48px 0;
+  padding: 75px 0;
 }
 
 .tituloSecao {
@@ -84,28 +94,25 @@ section {
   text-align: center;
 }
 
-/* ============================================================
-   HEADER + NAV
-   ============================================================ */
 
-/* HEADER – barra fixa no topo, estilo “site de marca” */
+/* HEADER – MENU */
 header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
 
-  height: 80px;                  /* altura da barra */
+  height: 80px;                  
   padding: 0 40px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  background-color: #ffffff;     /* barra branca */
+  background-color: #ffffff;     
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
 
-  z-index: 100;                  /* fica acima do conteúdo */
+  z-index: 100;                  
 }
 
 .logo {
@@ -114,12 +121,10 @@ header {
 }
 
 .logotipo {
-  width: 120px;
+  width: 70px;
   height: auto;
 }
 
-
-/* NAV – itens alinhados na mesma barra do header */
 header nav {
   background-color: transparent;
   padding: 0;
@@ -142,7 +147,6 @@ header nav ul {
   position: relative;
 }
 
-/* sublinhado no hover – pode manter se gostou */
 .menu-link::after {
   content: "";
   position: absolute;
@@ -160,7 +164,7 @@ header nav ul {
 }
 
 
-/* SECTION 1 – carrossel encostado no header */
+/* SECTION 1 – INICIO */
 .secaoinicio {
   position: relative;
   left: 50%;
@@ -169,11 +173,11 @@ header nav ul {
   margin-right: -50vw;
   width: 100vw;
 
-  padding-top: 0;          /* colado no header */
-  padding-bottom: 48px;    /* só respiro embaixo */
+  padding-top: 0;         
+  padding-bottom: 48px;   
 }
 
-/* SLIDER INÍCIO – FULL WIDTH + ANIMAÇÃO 1000ms */
+/* SLIDER INÍCIO */
 
 .secaoinicio .contentinicio {
   width: 100%;
@@ -190,12 +194,12 @@ header nav ul {
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
 }
 
-/* radios escondidos */
+/* BOLINHAS */
 .slidesinicio input[type="radio"] {
   display: none;
 }
 
-/* slides */
+/* CARROSSEL */
 .slidesinicio .slide {
   position: absolute;
   inset: 0;
@@ -209,7 +213,6 @@ header nav ul {
   object-fit: cover;
 }
 
-/* qual slide aparece */
 #slideinicio1:checked ~ .s1 {
   opacity: 1;
 }
@@ -234,7 +237,7 @@ header nav ul {
   opacity: 1;
 }
 
-/* bolinhas de navegação */
+/* ESTILIZAÇÃO DAS BOLINHAS */
 .navegarinicio {
   position: absolute;
   bottom: 16px;
@@ -254,7 +257,6 @@ header nav ul {
   transition: background-color 150ms ease-out, transform 150ms ease-out;
 }
 
-/* pinta a bolinha correspondente ao slide ativo */
 #slideinicio1:checked ~ .navegarinicio label[for="slideinicio1"],
 #slideinicio2:checked ~ .navegarinicio label[for="slideinicio2"],
 #slideinicio3:checked ~ .navegarinicio label[for="slideinicio3"],
@@ -265,7 +267,7 @@ header nav ul {
   transform: scale(1.1);
 }
 
-/* RESPONSIVO */
+/* RESPONSIVO DO CARROSSEL*/
 @media (max-width: 768px) {
   .slidesinicio {
     height: 60vh;
@@ -286,6 +288,7 @@ header nav ul {
   padding: 0 16px;
   pointer-events: none; /* container não bloqueia clique */
 }
+
 /* CONTROLES – SETAS LATERAIS DO SLIDER */
 
 .controles-setas {
@@ -305,9 +308,8 @@ header nav ul {
   align-items: center;
 }
 
-/* cada label é um “botão” de seta */
 .seta-label {
-  display: none;                /* por padrão, todas escondidas */
+  display: none;               
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -317,7 +319,7 @@ header nav ul {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  pointer-events: auto;         /* esses sim podem ser clicados */
+  pointer-events: auto;         
   transition: background-color 150ms ease-out, transform 150ms ease-out;
 }
 
@@ -326,7 +328,7 @@ header nav ul {
   transform: scale(1.05);
 }
 
-/* Mostrar apenas as setas correspondentes ao slide ativo */
+/* PADRONIZAÇÃO DAS SETAS COM AS IMAGENS */
 
 #slideinicio1:checked ~ .controles-setas .seta-esquerda .seta1,
 #slideinicio1:checked ~ .controles-setas .seta-direita .seta1 {
@@ -364,9 +366,9 @@ header nav ul {
   align-items: center;
 }
 
-/* cada label é um “botão” de seta */
+
 .seta-label {
-  display: none;                /* por padrão, todas escondidas */
+  display: none;                
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -376,7 +378,7 @@ header nav ul {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  pointer-events: auto;         /* esses sim podem ser clicados */
+  pointer-events: auto;         
   transition: background-color 150ms ease-out, transform 150ms ease-out;
 }
 
@@ -385,7 +387,7 @@ header nav ul {
   transform: scale(1.05);
 }
 
-/* Mostrar apenas as setas correspondentes ao slide ativo */
+/* PADRONIZAÇÃO DAS SETAS COM AS IMAGENS */
 
 #slideinicio1:checked ~ .controles-setas .seta-esquerda .seta1,
 #slideinicio1:checked ~ .controles-setas .seta-direita .seta1 {
@@ -409,9 +411,7 @@ header nav ul {
 
 
 
-/* ============================================================
-   SEÇÃO COLLAB
-   ============================================================ */
+/* SEÇÃO 2 -  COLLAB */
 
 .secaocollab p {
   text-align: center;
@@ -444,24 +444,21 @@ header nav ul {
 }
 
 
-/* ============================================================
-   SEÇÃO PRODUTOS – GRID 3 EM CIMA, 2 CENTRALIZADOS EMBAIXO
-   + ANIMAÇÃO DE ENTRADA + HOVER
-   ============================================================ */
+/* 
+   SEÇÃO 4 - PRODUTOS  */
 
 .secaoproduto .divCards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  /* deixa a segunda linha (2 cards) centralizada */
+  justify-content: center;  
   gap: 32px;
 }
 
 .secaoproduto .card {
   position: relative;
 
-  /* LARGURA E GRID: 3 cards por linha no desktop */
-  flex: 0 0 30%;         /* não encolhe, ocupa ~30% cada => no máximo 3 por linha */
-  max-width: 340px;      /* trava pra não ficar gigante em telas muito largas */
+  flex: 0 0 30%;        
+  max-width: 340px;      
 
   height: 320px;
   background-color: #ffffff;
@@ -473,14 +470,13 @@ header nav ul {
   align-items: flex-start;
   transition: height 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
 
-  /* animação de entrada */
   opacity: 0;
   transform: translateY(-40px);
   animation: cardEntrada 0.6s ease-out forwards;
 }
 
 
-/* delays para entrar em cascata */
+/* DELAY DA ANIMAÇÃO */
 .secaoproduto .card:nth-child(1) { animation-delay: 0.1s; }
 .secaoproduto .card:nth-child(2) { animation-delay: 0.2s; }
 .secaoproduto .card:nth-child(3) { animation-delay: 0.3s; }
@@ -494,28 +490,27 @@ header nav ul {
   }
 }
 
-/* borda de sabor (topo do card) */
+/* DETALHE DA BORDA DE CADA PRODUTO */
 .secaoproduto .card-morango   { border-top: 6px solid #ec4899; } /* morango */
 .secaoproduto .card-laranja   { border-top: 6px solid #fb923c; } /* laranja */
 .secaoproduto .card-limao     { border-top: 6px solid #facc15; } /* limão */
-.secaoproduto .card-blueberry { border-top: 6px solid #7c3aed; } /* blueberry (usa roxo uva) */
-.secaoproduto .card-ameixa    { border-top: 6px solid #c026d3; } /* ameixa / framboesa */
+.secaoproduto .card-blueberry { border-top: 6px solid #3a82ed; } /* blueberry */
+.secaoproduto .card-ameixa    { border-top: 6px solid #c026d3; } /* ameixa */
 
-/* HOVER – card cresce e “sobe” um pouco */
+/* MOVIMENTO DO CARD */
 .secaoproduto .card:hover {
   height: 420px;
   transform: translateY(-6px);
   box-shadow: 0 45px 90px rgba(0, 0, 0, 0.20);
 }
 
-/* IMAGEM DA LATA – tamanho fixo e centralizado */
 .secaoproduto .card-imagem {
   position: absolute;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 180px;   /* largura fixa para todas as latas */
-  height: 250px;  /* altura fixa para todas as latas */
+  width: 180px;   
+  height: 250px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -528,13 +523,13 @@ header nav ul {
   object-fit: contain;
 }
 
-/* HOVER – lata sobe e diminui, “saindo” um pouco do card */
+/* MOVIMENTO DA LATA */
 .secaoproduto .card:hover .card-imagem {
   top: -60px;
   transform: translateX(-50%) scale(0.8);
 }
 
-/* CONTEÚDO – escondido até o hover */
+
 .secaoproduto .card-conteudo {
   position: absolute;
   top: 270px;
@@ -547,6 +542,7 @@ header nav ul {
   transition: top 0.5s ease, height 0.5s ease;
 }
 
+/* MOVIMENTO DO CONTEÚDO */
 .secaoproduto .card:hover .card-conteudo {
   top: 170px;
   height: 220px;
@@ -562,13 +558,14 @@ header nav ul {
   font-size: 19px;
 }
 
-/* RESPONSIVO – ajusta largura dos cards em telas menores */
+/* RESPONSIVO – SEÇÃO PRODUTOS */
 @media (max-width: 900px) {
   .secaoproduto .card {
     width: 280px;
   }
 }
 
+/* RESPONSIVO – SEÇÃO PRODUTOS */
 @media (max-width: 600px) {
   .secaoproduto .divCards {
     gap: 24px;
@@ -581,9 +578,7 @@ header nav ul {
 }
 
 
-/* ============================================================
-   SEÇÃO CRIAÇÃO – TEXTO + PAINEL ESTUDO
-   ============================================================ */
+/*    SEÇÃO 4 - CRIAÇÃO */
 
 .secaocriacao > p {
   max-width: 720px;
@@ -611,11 +606,9 @@ header nav ul {
   margin-bottom: 16px;
 }
 
-/* ============================
-   PALETA DE CORES – CARD
-   ============================ */
+/*   PALETA DE CORES */
 
-/* Cores das amostras */
+/* CORES */
 .amostra-morango-1   { background-color: #EC4899; }
 .amostra-morango-2   { background-color: #EF4444; }
 
@@ -631,7 +624,7 @@ header nav ul {
 .amostra-limao-1     { background-color: #FACC15; }
 .amostra-limao-2     { background-color: #84CC16; }
 
-/* lista vertical de linhas de cor */
+
 .lista-cores {
   margin-top: 16px;
   display: flex;
@@ -641,15 +634,15 @@ header nav ul {
 
 .linha-cor {
   display: flex;
-  align-items: center;   /* ALINHA cor + texto pelo centro vertical */
-  gap: 16px;             /* espaço entre as cores e o texto */
+  align-items: center;   
+  gap: 16px;             
 }
 
 .amostras {
   display: flex;
-  flex-direction: row;   /* lado a lado */
+  flex-direction: row;   
   gap: 8px;
-  align-items: center;   /* centraliza na vertical em relação ao texto */
+  align-items: center;   
 }
 
 .amostra {
@@ -661,12 +654,12 @@ header nav ul {
 
 .descricao-cor {
   display: flex;
-  align-items: center;   /* centraliza o texto e os <code> na altura da cor */
-  margin: 0;             /* ZERA a margem padrão do <p> (matando o desnível) */
+  align-items: center;   
+  margin: 0;             
   font-size: 14px;
   color: #4b5563;
-  gap: 8px;              /* espaço entre “Morango —” e os códigos */
-  line-height: 1.3;      /* deixa o bloco mais compacto */
+  gap: 8px;             
+  line-height: 1.3;     
 }
 
 
@@ -679,7 +672,8 @@ header nav ul {
   line-height: 1;
 }
 
-/* tipografia */
+/* TIPOGRAFIA */
+
 .lista-tipografia {
   display: flex;
   flex-direction: column;
@@ -700,6 +694,7 @@ header nav ul {
 }
 
 .titulo-sabor {
+  font-family: "Poppins", system-ui, sans-serif;
   font-size: 20px;
   font-weight: 800;
 }
@@ -708,7 +703,7 @@ header nav ul {
   font-size: 14px;
 }
 
-/* CONTAINER DOS DOIS CARROSÉIS DA CRIAÇÃO */
+/* CARROSÉIS DA CRIAÇÃO */
 .carrosseis-criacao {
   margin-top: 32px;
   display: flex;
@@ -727,7 +722,7 @@ header nav ul {
   }
 }
 
-/* SLIDERS DE CRIAÇÃO – RÓTULOS E PACKS */
+/* CARROSEL DE CRIAÇÃO – RÓTULOS E PACKS */
 .carrosseis-criacao .slides,
 .carrosseis-criacao .slides2 {
   position: relative;
@@ -738,12 +733,10 @@ header nav ul {
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
 }
 
-/* esconde os radios */
 .carrosseis-criacao input[type="radio"] {
   display: none;
 }
 
-/* slides */
 .carrosseis-criacao .slide {
   position: absolute;
   inset: 0;
@@ -757,7 +750,7 @@ header nav ul {
   object-fit: fill;
 }
 
-/* RÓTULOS – qual slide aparece */
+/* LATAS */
 #slide1:checked ~ .s1 {
   opacity: 1;
 }
@@ -778,7 +771,7 @@ header nav ul {
   opacity: 1;
 }
 
-/* PACKS – qual slide aparece */
+/* PACKS */
 #slideA:checked ~ .s1 {
   opacity: 1;
 }
@@ -791,7 +784,7 @@ header nav ul {
   opacity: 1;
 }
 
-/* BOLINHAS – mesmo estilo do slider principal */
+/* BOLINHAS */
 .navegar,
 .navegar2 {
   position: absolute;
@@ -813,7 +806,7 @@ header nav ul {
   transition: background-color 150ms ease-out, transform 150ms ease-out;
 }
 
-/* pinta bolinha do carrossel de RÓTULOS */
+/* BOLINHAS LATA */
 #slide1:checked ~ .navegar-rotulos label[for="slide1"],
 #slide2:checked ~ .navegar-rotulos label[for="slide2"],
 #slide3:checked ~ .navegar-rotulos label[for="slide3"],
@@ -823,7 +816,7 @@ header nav ul {
   transform: scale(1.1);
 }
 
-/* pinta bolinha do carrossel de PACKS */
+/* BOLINHAS PACK */
 #slideA:checked ~ .navegar-packs label[for="slideA"],
 #slideB:checked ~ .navegar-packs label[for="slideB"],
 #slideC:checked ~ .navegar-packs label[for="slideC"] {
@@ -831,7 +824,7 @@ header nav ul {
   transform: scale(1.1);
 }
 
-/* ========= SETAS – CARROSSEL RÓTULOS ========= */
+/* SETAS – CARROSSEL LATAS */
 #slide1:checked ~ .controles-setas-rotulos .seta-esquerda .seta1,
 #slide1:checked ~ .controles-setas-rotulos .seta-direita .seta1 {
   display: flex;
@@ -857,7 +850,7 @@ header nav ul {
   display: flex;
 }
 
-/* ========= SETAS – CARROSSEL PACKS ========= */
+/* SETAS – CARROSSEL PACKS */
 #slideA:checked ~ .controles-setas-packs .seta-esquerda .setaA,
 #slideA:checked ~ .controles-setas-packs .seta-direita .setaA {
   display: flex;
@@ -874,25 +867,20 @@ header nav ul {
 }
 
 
-/* ============================================================
-   ESPECIFICAÇÕES DA LATA
-   ============================================================ */
+/*   ESPECIFICAÇÕES DA LATA*/
 
 .especificacaolata {
   padding: 32px 0;
 }
 
-/* container que coloca os dois cards lado a lado */
 .especificacoes-grid {
   width: 100%;
   display: flex;
   gap: 24px;
-  align-items: flex-start;  /* cada card com sua própria altura */
+  align-items: flex-start;  
 }
 
 
-
-/* estilo base do card (vale para lata e pack) */
 .dadoslata {
   flex: 1;
   background-color: #ffffff;
@@ -902,14 +890,13 @@ header nav ul {
   border-top: 4px solid #ec4899;
 }
 
-/* se quiser dar um toque diferente para o pack */
 .dadospack {
-  border-top: 4px solid #ec4899;  /* opcional, só um detalhe de destaque */
+  border-top: 4px solid #ec4899;  
 }
 
-/* detalhes expansíveis */
+/* EXPANSIVO */
 .dadoslata {
-  cursor: default;          /* o card em si não precisa parecer “clicável” */
+  cursor: default;          
 }
 
 /* tira o marcador padrão do <summary> */
@@ -925,12 +912,12 @@ header nav ul {
   display: none;
 }
 
-/* título dentro do summary alinhado certinho */
+/* ALINHAMENTO DO SUMMARY */
 .summary-especificacao .titulo-descricao {
-  margin-bottom: 0;   /* sobrescreve o margin-bottom padrão de h3 */
+  margin-bottom: 0;   
 }
 
-/* ícone de expandir/recolher */
+/* ICONE DE EXPANDIR/RECOLHER*/
 .icone-summary {
   font-size: 20px;
   font-weight: 600;
@@ -938,28 +925,24 @@ header nav ul {
   transition: transform 0.2s ease;
 }
 
-/* conteúdo que será animado ao abrir/fechar */
+/* ANIMAÇÃO DO CONTEUDO AO ABRIR/FECHAR*/
 .conteudo-especificacao {
   margin-top: 16px;
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-
-  /* ESSENCIAL: sempre visível para o CSS, quem "esconde" é o max-height */
   display: block;
-
   transition: max-height 3000ms ease, opacity 3000ms ease;
 }
 
-/* quando o <details> está aberto */
+/* CONTEUDO ABERTO */
 .dadoslata[open] .conteudo-especificacao {
   max-height: 600px;   /* maior que o conteúdo, só precisa ser suficiente */
   opacity: 1;
 }
 
 
-
-/* quando o details está aberto, gira o ícone (vira um "x" visualmente) */
+/* TRANSIÇÃO DO + PARA x */
 .dadoslata[open] .icone-summary {
   transform: rotate(45deg);
 }
@@ -991,9 +974,7 @@ header nav ul {
   }
 }
 
-/* ============================================================
-   SEÇÃO PROMOÇÃO
-   ============================================================ */
+/*SEÇÃO 5 - PROMOÇÃO */
 
 .secaopromocao .bloco-compre-ganhe {
   margin-bottom: 32px;
@@ -1001,10 +982,10 @@ header nav ul {
 }
 
 .banner-compre-ganhe {
-  width: 100%;                 /* ocupa toda a largura do conteúdo da seção */
-  max-width: 100%;             /* garante que não trave em 720px */
-  height: 500px;               /* altura fixa do banner (ajuste se quiser) */
-  margin-top: 16px;            /* tira o auto centralizado */
+  width: 100%;                 
+  max-width: 100%;             
+  height: 500px;               
+  margin-top: 16px;          
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
@@ -1013,10 +994,9 @@ header nav ul {
 .banner-compre-ganhe img {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* preenche o box inteiro cortando o excesso */
+  object-fit: cover;  
   display: block;
 }
-
 
 .bloco-como-participar {
   text-align: center;
@@ -1027,6 +1007,105 @@ header nav ul {
   margin-bottom: 8px;
 }
 
+.dadoslata {
+  cursor: default;          
+}
+
+/* REGULAMENTO */
+
+.regulamento {
+  padding: 32px 0;
+  width: 100%;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;  
+}
+
+.card-regulamento {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  border-top: 4px solid #fb923c;
+}
+
+/* tira o marcador padrão do <summary> */
+.summary-especificacao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  cursor: pointer;
+}
+
+.summary-especificacao::-webkit-details-marker {
+  display: none;
+}
+
+/* ALINHAMENTO DO SUMMARY */
+.summary-especificacao .titulo-descrica {
+  margin-bottom: 0;   
+}
+
+/* ICONE DE EXPANDIR/RECOLHER*/
+.icone-summary {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+/* ANIMAÇÃO DO CONTEUDO AO ABRIR/FECHAR*/
+.conteudo-regulamento {
+  margin-top: 16px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  display: block;
+  transition: max-height 3000ms ease, opacity 3000ms ease;
+}
+
+/* CONTEUDO ABERTO */
+.card-regulamento[open] .conteudo-regulamento {
+  max-height: 600px;   /* maior que o conteúdo, só precisa ser suficiente */
+  opacity: 1;
+}
+
+
+/* TRANSIÇÃO DO + PARA x */
+.card-regulamento[open] .icone-summary {
+  transform: rotate(45deg);
+}
+
+.titulo-descricao {
+  font-size: 18px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.conteudo-regulamento {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px 24px;
+  font-size: 16px;
+  margin-bottom: 4px;
+
+}
+
+.ul {
+  font-size: 14px;
+}
+
+
+@media (max-width: 900px) {
+  .especificacoes-grid {
+    flex-direction: column;
+  }
+}
+
+
+/* PASSOS DA PROMOÇÃO */
 .grade-passos {
   margin-top: 24px;
   display: grid;
@@ -1070,17 +1149,64 @@ header nav ul {
   font-weight: 600;
 }
 
-/* ============================================================
-   SEÇÃO CRIADORES
-   ============================================================ */
-
-/* respiro em relação à seção anterior */
-.secaocriadores {
-  padding-top: 48px;    /* mantém o topo igual às outras */
-  padding-bottom: 0px; /* diminui o espaço antes do rodapé */
+/* ONDE ENCONTRAR */
+.onde-encontrar {
+    text-align: center;
+    padding: 50px 20px;
 }
 
-/* descrição da seção – centralizada e com leve ajuste de margem */
+.onde-encontrar h2 {
+    font-size: 42px;
+    font-weight: 900;
+    color: #1f2933;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.lojas-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.loja {
+    text-align: center;
+}
+
+.loja img {
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+}
+
+.botao-loja {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 40px;
+    background-color: #ec4899;
+    color: #ffff ;
+    font-weight: 800;
+    font-size: 20px;
+    border-radius: 40px;
+    text-decoration: none;
+    box-shadow: 0px 6px 0px #aa336f; 
+    transition: transform 0.2s ease;
+}
+
+.botao-loja:hover {
+    transform: scale(1.05);
+   
+}
+
+
+/* SEÇÃO 6 -  CRIADORES */
+
+.secaocriadores {
+  padding-top: 48px;    
+  padding-bottom: 0px; 
+}
+
 .secaocriadores .descricao-secao {
   color: #6b7280;
   max-width: 720px;
@@ -1098,15 +1224,15 @@ header nav ul {
   padding: 50px;
 }
 
-/* CARD base do criador (pastilha) */
+/* CARD */
 .card-contato {
   position: relative;
   width: 260px;
   min-height: 140px;
-  padding: 40px 16px 20px;    /* espaço em cima pro avatar “pra fora” */
+  padding: 40px 16px 20px;    
   border-radius: 24px;
   background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);  /* mesma sombra padrão do site */
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08); 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1119,7 +1245,7 @@ header nav ul {
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
 }
 
-/* avatar redondo saindo pra fora do card */
+/* ICONE DA FOTO */
 .avatar-contato {
   position: absolute;
   top: -32px;
@@ -1136,7 +1262,7 @@ header nav ul {
   overflow: hidden;
 }
 
-/* imagem dentro do avatar */
+/* FOTO */
 .foto {
   width: 100%;
   height: 100%;
@@ -1144,7 +1270,7 @@ header nav ul {
   border-radius: 50%;
 }
 
-/* texto do card */
+/* CONTEÚDO */
 .info-contato {
   margin-top: 16px;
   display: flex;
@@ -1163,28 +1289,33 @@ header nav ul {
   color: #6b7280;
 }
 
-/* Cores de fundo dos cards (paleta das latinhas) */
+/* CORES DOS CARDS */
 .card-contato--morango {
-  background-color: rgba(236, 72, 153, 0.12);
+  background-color: rgba(236, 72, 153, 0.122);
+  border-top: 4px solid #ec489a;
 }
 
-.card-contato--uva {
+.card-contato--ameixa {
   background-color: rgba(168, 85, 247, 0.12);
+  border-top: 4px solid #a955f7;
 }
 
-.card-contato--framboesa {
-  background-color: rgba(219, 39, 119, 0.12);
+.card-contato--blueberry {
+  background-color: rgb(58, 130, 237, 0.12);
+  border-top: 4px solid  #3a82ed;
 }
 
 .card-contato--laranja {
   background-color: rgba(251, 146, 60, 0.16);
+  border-top: 4px solid #fb923c;
 }
 
 .card-contato--limao {
   background-color: rgba(250, 204, 21, 0.22);
+  border-top: 4px solid #facc15
 }
 
-/* responsivo – se quiser garantir respiro em telas menores */
+/* RESPONSIVO – CONTATOS*/
 @media (max-width: 600px) {
   .grid-contatos {
     gap: 32px;
@@ -1196,9 +1327,7 @@ header nav ul {
   }
 }
 
-/* ============================================================
-   RODAPÉ
-   ============================================================ */
+/* SEÇÃO 7 - RODAPÉ */
 
 .rodape {
   padding: 32px 24px 24px;
@@ -1236,9 +1365,7 @@ header nav ul {
 }
 
 
-/* ============================================================
-   RESPONSIVO
-   ============================================================ */
+/*RESPONSIVO - CONTATOS */
 
 @media (max-width: 768px) {
   header {
