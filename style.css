@@ -4,6 +4,21 @@
   padding: 0;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  padding: 50px 0; 
+}
+
+@media (max-width: 450px) {
+  section {
+    padding: 32px 0;
+  }
+}
+
 body {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
@@ -96,6 +111,22 @@ section {
 
 
 /* HEADER – MENU */
+
+@media (max-width: 768px) {
+  header {
+    height: auto;
+    padding: 12px 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px;
+  }
+}
+
 header {
   position: fixed;
   top: 0;
@@ -413,6 +444,11 @@ header nav ul {
 
 /* SEÇÃO 2 -  COLLAB */
 
+.informacoesmarca img {
+    height: auto;
+    max-height: 120px;
+}
+
 .secaocollab p {
   text-align: center;
 }
@@ -529,7 +565,6 @@ header nav ul {
   transform: translateX(-50%) scale(0.8);
 }
 
-
 .secaoproduto .card-conteudo {
   position: absolute;
   top: 270px;
@@ -580,6 +615,26 @@ header nav ul {
 
 /*    SEÇÃO 4 - CRIAÇÃO */
 
+@media (max-width: 600px) {
+
+  .secaoproduto .card {
+      height: 260px;
+  }
+
+  .secaoproduto .card:hover {
+      height: 360px;
+  }
+
+  .secaoproduto .card-imagem {
+      width: 150px;
+      height: 200px;
+  }
+
+  .secaoproduto .card-conteudo p {
+      font-size: 16px;
+  }
+}
+
 .secaocriacao > p {
   max-width: 720px;
   margin: 0 auto 24px;
@@ -605,6 +660,7 @@ header nav ul {
   font-size: 18px;
   margin-bottom: 16px;
 }
+
 
 /*   PALETA DE CORES */
 
@@ -1150,6 +1206,24 @@ header nav ul {
 }
 
 /* ONDE ENCONTRAR */
+.loja img {
+    width: 100%;
+    max-width: 130px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+@media (max-width: 480px) {
+    .loja img {
+        max-width: 100px;
+    }
+
+    .botao-loja {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
 .onde-encontrar {
     text-align: center;
     padding: 50px 20px;
