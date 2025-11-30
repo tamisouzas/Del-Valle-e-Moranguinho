@@ -43,14 +43,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;            /* espaço entre linhas e imagem */
-    margin: 40px 0;
+    gap: 20px;            
+    margin: 5px 0;
+    
 }
 
 .hr-custom .linha {
     flex: 1;
     height: 1.5px;
-    background-color: #ff336633; /* cor da linha */
+    background-color: #ff336633; 
 }
 
 .hr-custom img {
@@ -94,6 +95,7 @@ main {
 
 section {
   padding: 75px 0;
+  padding-top: 75px;
 }
 
 .tituloSecao {
@@ -125,7 +127,8 @@ section {
     justify-content: center;
     gap: 10px 20px;
   }
-}
+
+ }
 
 header {
   position: fixed;
