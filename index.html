@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Del Valle e Moranguinho</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -205,9 +205,9 @@
         <!-- SEÇÃO 4 - CRIAÇÃO -->
         <section class="secaocriacao" id="Criação">
             <h2 class="tituloSecao">Processo Criativo</h2>
-            <p>Foram desenvolvidos cinco sabores inspirados nas personagens, cada um com embalagens únicas e elementos gráficos representativos. 
-                Definindo a paleta de cores, escolha tipográfica, ilustrações e composição do pack.</p>
-            <div class="painel-estudo" aria-label="Painel de estudo de estilos">
+            <!-- <p>Foram desenvolvidos cinco sabores inspirados nas personagens, cada um com embalagens únicas e elementos gráficos representativos.
+                 Definindo a paleta de cores, escolha tipográfica, ilustrações e composição do pack.</p> -->
+            <div class="painel-estudo" aria-label="Painel de tipografias">
 
                 <!-- Paleta de Cores -->
                 <div class="cartao-estudo">
@@ -265,23 +265,22 @@
 
                     <div class="lista-tipografia">
                         <div class="tipografia-item">
-                            <p class="rotulo">Logo</p>
-                            <p class="logo-delvalle">Del Valle</p>
-                            <p class="texto-nota">Script para assinatura (usa <strong>Pacifico</strong> se o Passo 1 estiver ativo).</p>
+                            <p class="rotulo">Lata</p>
+                            <p class="tipografia1">Del Valle e Moranguinho</p>
+                            <p class="texto-nota">Usada <strong>Strawberry Shortcake New</strong> para reforça o caráter lúdico e colecionável do universo da Moranguinho.</p>
                         </div>
 
                         <div class="tipografia-item">
-                            <p class="rotulo">Hotsite - Titulos</p>
-                            <p class="titulo-sabor">Dell Valle e Moranguinho</p>
-                            <p class="texto-nota">Poppins Bold e Regular (Poppins 800).</p>
+                            <p class="tipografia2">Del Valle e Moranguinho</p>
+                            <p class="texto-nota">Usada <strong>Noto</strong> devido legibilidade em pequenos corpos e por atender aos requisitos de rotulagem.</p>
                         </div>
 
                         <div class="tipografia-item">
-                            <p class="rotulo">Informações</p>
-                            <p class="texto-informacao">Informações nutricionais e ingredientes</p>
-                            <p class="texto-nota">Sans-serif regular (Poppins 400), tamanho menor para blocos densos.</p>
+                            <p class="rotulo">Hotsite </p>
+                            <p class="tipografia3">Dell Valle e Moranguinho</p>
+                            <p class="texto-nota"><strong>Poppins</strong> uma fonte sans-serif moderna, com formas arredondadas e limpas, o que facilita a leitura</p>
                         </div>
-                    </div>
+                     </div>
                 </div>
             </div>
 
@@ -350,36 +349,58 @@
                     <input type="radio" name="slider-packs" id="slideA" checked>
                     <input type="radio" name="slider-packs" id="slideB">
                     <input type="radio" name="slider-packs" id="slideC">
+                    <input type="radio" name="slider-packs" id="slideD">
+                    <input type="radio" name="slider-packs" id="slideE">
+                    <input type="radio" name="slider-packs" id="slideF">
 
                     <!-- IMAGENS CARROSSEL -->
                     <div class="slide s1">
                         <img src="Rotulos/facaearte.jpeg" alt="Faca com a arte aplicada">
                     </div>
                     <div class="slide">
-                        <img src="Rotulos/arte.jpeg" alt="Arte para impressão do pack">
-                    </div>
-                    <div class="slide">
                         <img src="Rotulos/faca.jpeg" alt="Faca para corte do pack">
                     </div>
+                    <div class="slide">
+                        <img src="Rotulos/pack-frente.jpeg" alt="Mockup do pack - Frente">
+                    </div>
+                    <div class="slide">
+                        <img src="Rotulos/pack-lado1.jpeg" alt="Mockup do pack - Lateral">
+                    </div>
+                    <div class="slide">
+                        <img src="Rotulos/pack-verso.jpeg" alt="Mockup do pack - Verso">
+                    </div>
+                    <div class="slide">
+                        <img src="Rotulos/pack-lado2.jpeg" alt="Mockup do pack - Lateral">
+                    </div>
+                   
 
                     <!-- BOLINHAS DO RODAPÉ DA IMAGEM -->
                     <div class="navegar2 navegar-packs">
                         <label class="bar" for="slideA"></label>
                         <label class="bar" for="slideB"></label>
                         <label class="bar" for="slideC"></label>
+                        <label class="bar" for="slideD"></label>
+                        <label class="bar" for="slideE"></label>
+                        <label class="bar" for="slideF"></label>
                     </div>
 
                     <!-- SETAS -->
                     <div class="controles-setas controles-setas-packs">
                         <div class="seta seta-esquerda">
-                        <label class="seta-label setaA" for="slideC">&#10094;</label>
-                        <label class="seta-label setaB" for="slideA">&#10094;</label>
+                        <label class="seta-label setaA" for="slideF">&#10094;</label>
+                        <label class="seta-label setaF" for="slideE">&#10094;</label>
+                        <label class="seta-label setaE" for="slideD">&#10094;</label>
+                        <label class="seta-label setaD" for="slideC">&#10094;</label>
                         <label class="seta-label setaC" for="slideB">&#10094;</label>
+                        <label class="seta-label setaB" for="slideA">&#10094;</label>
                         </div>
                         <div class="seta seta-direita">
                         <label class="seta-label setaA" for="slideB">&#10095;</label>
                         <label class="seta-label setaB" for="slideC">&#10095;</label>
-                        <label class="seta-label setaC" for="slideA">&#10095;</label>
+                        <label class="seta-label setaC" for="slideD">&#10095;</label>
+                        <label class="seta-label setaD" for="slideE">&#10095;</label>
+                        <label class="seta-label setaE" for="slideF">&#10095;</label>
+                        <label class="seta-label setaF" for="slideA">&#10095;</label>
                         </div>
                     </div>
                     </div>
@@ -591,7 +612,7 @@
                     </a>
                 </article>
 
-                <article class="card-contato card-contato--morango" aria-label="Contato: Evelyn Ellen, Designer de Produto">
+                <article class="card-contato card-contato--morango" aria-label="Contato: Evelyn Ellen, Web Designer">
                     <a href="https://www.instagram.com/_eevelync?igsh=MWEybWF3cnJ0cTczNg==" target="_blank">
                     <div class="avatar-contato">
                         <img class="foto" src="Imagens/Evelyn.png" alt="Foto de Evelyn Ellen">
@@ -603,7 +624,7 @@
                     </a>
                 </article>
 
-                <article class="card-contato card-contato--blueberry" aria-label="Contato: Simone Cantil, Designer de Produto">
+                <article class="card-contato card-contato--blueberry" aria-label="Contato: Simone Cantil, Designer Editorial">
                     <a href="https://www.instagram.com/simone_cantil?igsh=bGRicnMzZTZwNmhl" target="_blank">
                     <div class="avatar-contato">
                         <img class="foto" src="Imagens/Simone.png" alt="Foto de Simone Cantil">
@@ -615,7 +636,7 @@
                     </a>
                 </article>
 
-                <article class="card-contato card-contato--laranja" aria-label="Contato: Tamires Souza, Designer de Produto">
+                <article class="card-contato card-contato--laranja" aria-label="Contato: Tamires Souza, Web Designer">
                     <a href="https://www.instagram.com/tamiisoouza?igsh=eHNreXkxZWxkOGU3&utm_source=qr" target="_blank"></a>
                     <div class="avatar-contato">
                         <img class="foto" src="Imagens/Tamires.png" alt="Foto de Tamires Souza">
@@ -627,7 +648,7 @@
                     </a>
                 </article>
 
-                <article class="card-contato card-contato--limao" aria-label="Contato: Thayza Sousa, Designer de Produto">
+                <article class="card-contato card-contato--limao" aria-label="Contato: Thayza Sousa, Designer Finalista">
                     <a href="https://www.instagram.com/tayzasousa55?igsh=YzZ6cHM1OGUwcXl3" target="_blank">
                     <div class="avatar-contato">
                         <img class="foto" src="Imagens/Thayza.png" alt="Foto de Thayza Sousa">

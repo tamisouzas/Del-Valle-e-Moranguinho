@@ -19,6 +19,13 @@ section {
   }
 }
 
+@font-face {
+    font-family: 'Strawberry Shortcake NEW Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('Fontes/Strawberry Shortcake NEW.woff') format('woff');
+    }
+
 body {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
@@ -744,27 +751,40 @@ header nav ul {
 }
 
 .tipografia-item .rotulo {
-  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
   color: #6b7280;
   margin-bottom: 4px;
+  height: 10px;
 }
 
-.logo-delvalle {
-  font-family: "Pacifico", cursive;
-  font-size: 24px;
+.texto-nota{
+  font-size: 15px;
+  padding-top: 2px;
 }
 
-.titulo-sabor {
-  font-family: "Poppins", system-ui, sans-serif;
+.tipografia1 {
+  font-family: "Strawberry Shortcake New Regular", sans-serif;;
+  font-size: 40px;
+  height: 40px;
+}
+
+.tipografia2{
+  font-family: "Noto", sans-serif;;
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 600;
+  height: 15px;  
 }
 
-.texto-informacao {
-  font-size: 14px;
+.tipografia3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  height: 30px;
 }
+
+
 
 /* CARROSÉIS DA CRIAÇÃO */
 .carrosseis-criacao {
@@ -790,7 +810,7 @@ header nav ul {
 .carrosseis-criacao .slides2 {
   position: relative;
   width: 100%;
-  height: 360px;
+  height: 450px;
   overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
@@ -811,8 +831,10 @@ header nav ul {
 .carrosseis-criacao .slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
+
+
 
 /* LATAS */
 #slide1:checked ~ .s1 {
@@ -847,6 +869,16 @@ header nav ul {
 #slideC:checked ~ .slide:nth-of-type(3) {
   opacity: 1;
 }
+
+#slideD:checked ~ .slide:nth-of-type(4) {
+  opacity: 1;
+}
+
+#slideE:checked ~ .slide:nth-of-type(5) {
+  opacity: 1;
+}
+
+
 
 /* BOLINHAS */
 .navegar,
@@ -883,7 +915,10 @@ header nav ul {
 /* BOLINHAS PACK */
 #slideA:checked ~ .navegar-packs label[for="slideA"],
 #slideB:checked ~ .navegar-packs label[for="slideB"],
-#slideC:checked ~ .navegar-packs label[for="slideC"] {
+#slideC:checked ~ .navegar-packs label[for="slideC"],
+#slideD:checked ~ .navegar-packs label[for="slideD"],
+#slideE:checked ~ .navegar-packs label[for="slideE"],
+#slideF:checked ~ .navegar-packs label[for="slideF"] {
   background-color: #ec4899;
   transform: scale(1.1);
 }
@@ -930,6 +965,20 @@ header nav ul {
   display: flex;
 }
 
+#slideD:checked ~ .controles-setas-packs .seta-esquerda .setaD,
+#slideD:checked ~ .controles-setas-packs .seta-direita .setaD {
+  display: flex;
+}
+
+#slideE:checked ~ .controles-setas-packs .seta-esquerda .setaE,
+#slideE:checked ~ .controles-setas-packs .seta-direita .setaE {
+  display: flex;
+}
+
+#slideF:checked ~ .controles-setas-packs .seta-esquerda .setaF,
+#slideF:checked ~ .controles-setas-packs .seta-direita .setaF {
+  display: flex;
+}
 
 /*   ESPECIFICAÇÕES DA LATA*/
 
