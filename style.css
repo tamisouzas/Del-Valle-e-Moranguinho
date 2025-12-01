@@ -542,7 +542,7 @@ header nav ul {
 .secaoproduto .card-morango   { border-top: 6px solid #ec4899; } /* morango */
 .secaoproduto .card-laranja   { border-top: 6px solid #fb923c; } /* laranja */
 .secaoproduto .card-limao     { border-top: 6px solid #facc15; } /* limão */
-.secaoproduto .card-blueberry { border-top: 6px solid #3a82ed; } /* blueberry */
+.secaoproduto .card-mirtilo { border-top: 6px solid #3a82ed; } /* blueberry */
 .secaoproduto .card-ameixa    { border-top: 6px solid #c026d3; } /* ameixa */
 
 /* MOVIMENTO DO CARD */
@@ -679,68 +679,80 @@ header nav ul {
 /*   PALETA DE CORES */
 
 /* CORES */
-.amostra-morango-1   { background-color: #EC4899; }
-.amostra-morango-2   { background-color: #EF4444; }
+ 
+.amostra-morango-1   { background-color: #f1b6bc; }
+.amostra-morango-2   { background-color: #e58d72; }
 
-.amostra-uva-1       { background-color: #A855F7; }
-.amostra-uva-2       { background-color: #7C3AED; }
+.amostra-mirtilo-1       { background-color: #B6DFE5; }
+.amostra-mirtilo-2       { background-color: #86BBE4; }
 
-.amostra-framboesa-1 { background-color: #DB2777; }
-.amostra-framboesa-2 { background-color: #C026D3; }
+.amostra-ameixa-1 { background-color: #E7D5E5; }
+.amostra-ameixa-2 { background-color: #C8AED3; }
 
-.amostra-laranja-1   { background-color: #FB923C; }
-.amostra-laranja-2   { background-color: #EAB308; }
+.amostra-laranja-1   { background-color: #F5D896; }
+.amostra-laranja-2   { background-color: #F6B575; }
 
-.amostra-limao-1     { background-color: #FACC15; }
-.amostra-limao-2     { background-color: #84CC16; }
+.amostra-limao-1     { background-color: #E9E28A; }
+.amostra-limao-2     { background-color: #AAA75A; }
 
 
 .lista-cores {
   margin-top: 16px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 25px;
 }
 
 .linha-cor {
   display: flex;
   align-items: center;   
-  gap: 16px;             
+  justify-content: center;
+  gap: 30px;             
 }
 
 .amostras {
   display: flex;
   flex-direction: row;   
-  gap: 8px;
+  gap: 20px;
   align-items: center;   
 }
 
 .amostra {
-  width: 50px;
+  width: 180px;
   height: 50px;
   border-radius: 12px;
   box-shadow: 0 3px 6px rgba(15, 23, 42, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .descricao-cor {
+  width: 120px;
   display: flex;
+  justify-content: center;
   align-items: center;   
   margin: 0;             
-  font-size: 14px;
-  color: #4b5563;
+  font-size: 22px;
+  color: #1f2933;
   gap: 8px;             
-  line-height: 1.3;     
+  line-height: 1.3; 
+  font-family: "Poppins" , sans-serif;    
+  font-weight: 600;
 }
 
-
-.descricao-cor code {
-  font-family: "Poppins", system-ui, sans-serif;
-  font-size: 13px;
-  background-color: #f3f4f6;
+.amostra span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  background: rgba(15, 15, 15, 0.060);
   padding: 2px 6px;
   border-radius: 6px;
-  line-height: 1;
+  backdrop-filter: blur(3px);
 }
+
+
 
 /* TIPOGRAFIA */
 
@@ -748,15 +760,20 @@ header nav ul {
   display: flex;
   flex-direction: column;
   gap: 16px;
+
 }
 
-.tipografia-item .rotulo {
+.tipografia-item .rotulo  {
   font-family: "Poppins", sans-serif;
   font-size: 13px;
   text-transform: uppercase;
-  color: #6b7280;
+  color:#6b7280;
   margin-bottom: 4px;
   height: 10px;
+}
+
+.tipografia-item .tipografia1 .tipografia2 .tipografia3{
+  color: #000
 }
 
 .texto-nota{
@@ -768,6 +785,8 @@ header nav ul {
   font-family: "Strawberry Shortcake New Regular", sans-serif;;
   font-size: 40px;
   height: 40px;
+  word-spacing: 8px;
+  color: #1f2933
 }
 
 .tipografia2{
@@ -775,6 +794,7 @@ header nav ul {
   font-size: 20px;
   font-weight: 600;
   height: 15px;  
+  color: #1f2933
 }
 
 .tipografia3 {
@@ -782,8 +802,8 @@ header nav ul {
   font-size: 30px;
   font-weight: 600;
   height: 30px;
+  color: #1f2933
 }
-
 
 
 /* CARROSÉIS DA CRIAÇÃO */
@@ -828,12 +848,17 @@ header nav ul {
   transition: opacity 1000ms ease-in-out;
 }
 
-.carrosseis-criacao .slide img {
+.carrosseis-criacao .slides img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+.carrosseis-criacao .slides2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
 
 
 /* LATAS */
@@ -878,7 +903,9 @@ header nav ul {
   opacity: 1;
 }
 
-
+#slideF:checked ~ .slide:nth-of-type(6) {
+  opacity: 1;
+}
 
 /* BOLINHAS */
 .navegar,
@@ -984,6 +1011,7 @@ header nav ul {
 
 .especificacaolata {
   padding: 32px 0;
+  
 }
 
 .especificacoes-grid {
@@ -991,6 +1019,7 @@ header nav ul {
   display: flex;
   gap: 24px;
   align-items: flex-start;  
+
 }
 
 
@@ -1026,7 +1055,7 @@ header nav ul {
 }
 
 /* ALINHAMENTO DO SUMMARY */
-.summary-especificacao .titulo-descricao {
+.summary-especificacao .titulo-descricao-especificacao {
   margin-bottom: 0;   
 }
 
@@ -1060,7 +1089,7 @@ header nav ul {
   transform: rotate(45deg);
 }
 
-.titulo-descricao {
+.titulo-descricao-especificacao {
   font-size: 22px;
   margin-bottom: 16px;
   text-align: left;
@@ -1137,10 +1166,10 @@ header nav ul {
 .card-regulamento {
   flex: 1;
   background-color: #ffffff;
-  padding: 24px;
+  padding: 18px;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
-  border-top: 4px solid #fb923c;
+  border-top: 4px solid #ec4899;
 }
 
 /* tira o marcador padrão do <summary> */
@@ -1195,6 +1224,7 @@ header nav ul {
   font-size: 18px;
   margin-bottom: 16px;
   text-align: left;
+  font-weight: 500;
 }
 
 .conteudo-regulamento {
